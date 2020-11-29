@@ -13,5 +13,6 @@ namespace TrackerUI
     /// </summary>
     public partial class App : Application
     {
+       
     }
 }

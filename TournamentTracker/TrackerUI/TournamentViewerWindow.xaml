@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lib="clr-namespace:TrackerLibrary;assembly=TrackerLibrary"
         xmlns:local="clr-namespace:TrackerUI"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
@@ -38,4 +39,5 @@
         <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="576,188,0,0" VerticalAlignment="Top" Height="23" Width="46" RenderTransformOrigin="0.543,0.043"/>
 
     </Grid>
+    
 </Window>

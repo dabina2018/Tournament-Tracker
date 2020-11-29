@@ -6,5 +6,6 @@ namespace TrackerLibrary
 {
     interface IDataConnection
     {
+        PrizeModel CreatePrize(PrizeModel model);
     }
 }
