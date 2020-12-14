@@ -15,11 +15,12 @@
         <Label Content="Place Name" HorizontalAlignment="Left" Margin="34,85,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="placeName_textbx" HorizontalAlignment="Left" Margin="161,89,0,0" Text="2nd" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Prize Amount" HorizontalAlignment="Left" Margin="34,113,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="placeamount_textbx" HorizontalAlignment="Left" Margin="161,117,0,0" Text="$130" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="prizeAmt_textbx" HorizontalAlignment="Left" Margin="161,117,0,0" Text="$130.00" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Prize Percentage" HorizontalAlignment="Left" Margin="34,184,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="pricePercentage_textbx" HorizontalAlignment="Left" Margin="174,188,0,0" Text="12%" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="prizePercentage_textbx" HorizontalAlignment="Left" Margin="174,188,0,0" Text="12" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"/>
         <Label Content="- or -" HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="createPrize_Btn" Content="Create Prize" HorizontalAlignment="Left" Margin="98,271,0,0" VerticalAlignment="Top" Width="126" Height="39"/>
+        <Button x:Name="createPrize_Btn" Content="Create Prize" HorizontalAlignment="Left" Margin="98,271,0,0" VerticalAlignment="Top" Width="126" Height="39" Click="createPrize_Btn_Click"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="221,184,0,0" VerticalAlignment="Top" Width="24"/>
 
     </Grid>
 </Page>
