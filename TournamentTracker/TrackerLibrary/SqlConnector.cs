@@ -14,7 +14,8 @@ namespace TrackerLibrary
         /// <returns>the prize info, including the unique id</returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            model.id = 1;
+            model.Id = 1;
+
             return model;
         }
     }

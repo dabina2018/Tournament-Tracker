@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:lib="clr-namespace:TrackerLibrary;assembly=TrackerLibrary"
              xmlns:local="clr-namespace:TrackerUI"
-             StartupUri="TournamentDashboard.xaml">
+             StartupUri="CreatePrize.xaml">
     
     <Application.Resources>
         <Style TargetType="Window">

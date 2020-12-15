@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TrackerLibrary
 {
-    interface IDataConnection
+    public interface IDataConnection
     {
         PrizeModel CreatePrize(PrizeModel model);
     }

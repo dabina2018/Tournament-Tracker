@@ -29,12 +29,13 @@ namespace TrackerUI
             if (ValidateForm())
             {
                 PrizeModel model = new PrizeModel(
-                    placeName_textbx.Text, placeName_textbx.Text, prizeAmt_textbx.Text, prizePercentage_textbx.Text);
-                foreach (IDataConnection data in GlobalConfig.Connections)
+                    placeName_textbx.Text, placeNumber_textbx.Text, prizeAmt_textbx.Text, prizePercentage_textbx.Text);
+                foreach (IDataConnection db in GlobalConfig.Connections)
                 {
-                    DBNull.CreatePrize(model);
+                    db.CreatePrize(model);
                 }
             }
+            else {MessageBox.Show("This form has invalid information. Please check it and try again.");  }
 
         }
         private bool ValidateForm()

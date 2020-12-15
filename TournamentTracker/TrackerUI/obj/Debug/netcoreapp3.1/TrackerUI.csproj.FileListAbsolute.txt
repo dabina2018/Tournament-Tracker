@@ -31,3 +31,4 @@ C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\Track
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerUI\bin\Debug\netcoreapp3.1\TrackerLibrary.dll
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerUI\bin\Debug\netcoreapp3.1\TrackerLibrary.pdb
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerUI\obj\Debug\netcoreapp3.1\TrackerUI.csproj.CopyComplete
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerUI\bin\Debug\netcoreapp3.1\TrackerUI.dll.config
