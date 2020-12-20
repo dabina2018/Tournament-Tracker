@@ -93,7 +93,7 @@ namespace TrackerUI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TrackerUI;component/createprize.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TrackerUI;V1.0.0.0;component/createprize.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CreatePrize.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
