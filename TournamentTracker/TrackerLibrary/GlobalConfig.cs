@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using TrackerLibrary.Models;
 
 namespace TrackerLibrary
 {
@@ -23,7 +24,7 @@ namespace TrackerLibrary
             if (textFiles)
             {
                 //TODO - Create textfile Connection
-                TextConnection text = new TextConnection();
+                TextConnector text = new TextConnector();
                 Connections.Add(text);
             }
         }

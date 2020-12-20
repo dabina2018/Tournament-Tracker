@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TrackerLibrary.Models;
 
 namespace TrackerLibrary
 {
@@ -12,7 +13,7 @@ namespace TrackerLibrary
         /// </summary>
         /// <param name="model"></param>
         /// <returns>the prize info, including the unique id</returns>
-        public PrizeModel CreatePrize(PrizeModel model)
+        public Models.PrizeModel CreatePrize(Models.PrizeModel model)
         {
             model.Id = 1;
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.Models
 {
-    class TextConnection : IDataConnection
+    class TextConnector : IDataConnection
     {
         public PrizeModel CreatePrize(PrizeModel model)
         {
