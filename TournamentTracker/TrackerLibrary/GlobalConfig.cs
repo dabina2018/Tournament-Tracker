@@ -10,23 +10,30 @@ namespace TrackerLibrary.DataAccess
 {
     public static class GlobalConfig
     {
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
-      
-        public static void InitializeConnections(bool database, bool textFiles)
+        public static IDataConnection Connection { get; private set; }               
+        public static void InitializeConnections(DatabaseType db)
         {
-            
-            if (database)
+            /*switch (db)
+            {
+                case DatabaseType.Sql:
+                    break;
+                case DatabaseType.Textfile:
+                    break;
+                default:
+                    break;
+            }*/
+            if (db  == DatabaseType.Sql)
             {
                 // TODO - Set up SQL Connection
                 SqlConnector sql = new SqlConnector();
-                Connections.Add(sql);
+                Connection = sql;
                 
             }
-            if (textFiles)
+            else if (db == DatabaseType.TextFile)
             {
                 //TODO - Create textfile Connection
                 TextConnector text = new TextConnector();
-                Connections.Add(text);
+                Connection = text;
             }
         }
         public static string CnnString(string name)
