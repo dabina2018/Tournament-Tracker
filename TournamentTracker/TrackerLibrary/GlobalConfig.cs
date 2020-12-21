@@ -4,8 +4,9 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using TrackerLibrary.Models;
+using System.Configuration;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.DataAccess
 {
     public static class GlobalConfig
     {
@@ -27,6 +28,11 @@ namespace TrackerLibrary
                 TextConnector text = new TextConnector();
                 Connections.Add(text);
             }
+        }
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+
         }
     }
 }

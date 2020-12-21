@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TrackerLibrary.Models;
-using TrackerLibrary;
+using TrackerLibrary.DataAccess;
 
 namespace TournamentTrackerUI
 {

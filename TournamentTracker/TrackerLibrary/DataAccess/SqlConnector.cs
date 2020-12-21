@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TrackerLibrary.Models;
 
-namespace TrackerLibrary
+namespace TrackerLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
@@ -13,10 +17,21 @@ namespace TrackerLibrary
         /// </summary>
         /// <param name="model"></param>
         /// <returns>the prize info, including the unique id</returns>
-        public Models.PrizeModel CreatePrize(Models.PrizeModel model)
+        public PrizeModel CreatePrize(PrizeModel model)
         {
-            model.Id = 1;
+            //model.Id = 1;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("TournamentTracker")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@PlaceNumber", model.PlaceNumber);
+                p.Add("@PlaceName", model.PlaceName);
+                p.Add("@PrizeAmount", model.PrizeAmount);
+                p.Add("@PrizePercentage", model.PrizePercentage);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
+                connection.Execute("dbo.spPrizes_Insert", p, commandType:CommandType.StoredProcedure);
+                model.Id = p.Get<int>("@id");
+            }
             return model;
         }
     }

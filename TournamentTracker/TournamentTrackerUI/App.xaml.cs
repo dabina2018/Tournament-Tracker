@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace TournamentTrackerUI
 {
     /// <summary>
@@ -29,7 +30,7 @@ namespace TournamentTrackerUI
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
+            TrackerLibrary.DataAccess.GlobalConfig.InitializeConnections(true, true);
         }
     }
 }

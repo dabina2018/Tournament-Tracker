@@ -4,6 +4,6 @@ C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\Track
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.csprojAssemblyReference.cache
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.AssemblyInfoInputs.cache
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.AssemblyInfo.cs
-C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.csproj.CoreCompileInputs.cache
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.dll
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.pdb
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Debug\netcoreapp3.1\TrackerLibrary.csproj.CoreCompileInputs.cache
