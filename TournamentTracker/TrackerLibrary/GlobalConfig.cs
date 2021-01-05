@@ -13,19 +13,11 @@ namespace TrackerLibrary.DataAccess
         public static IDataConnection Connection { get; private set; }               
         public static void InitializeConnections(DatabaseType db)
         {
-            /*switch (db)
-            {
-                case DatabaseType.Sql:
-                    break;
-                case DatabaseType.Textfile:
-                    break;
-                default:
-                    break;
-            }*/
+            
             if (db  == DatabaseType.Sql)
             {
                 // TODO - Set up SQL Connection
-                SqlConnector sql = new SqlConnector();
+                 SqlConnector sql = new SqlConnector();
                 Connection = sql;
                 
             }

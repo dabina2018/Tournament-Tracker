@@ -11,18 +11,19 @@ namespace TrackerLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
+        private const string db = "TournamentTracker";
         public PersonModel CreatePerson(PersonModel model)
         {
-            using IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournament"));
+            using IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db));
             var p = new DynamicParameters();
             p.Add("@FirstName", model.FirstName);
             p.Add("@LastName", model.LastName);
             p.Add("@EmailAddress", model.EmailAddress);
-            p.Add("@Cellphone", model.CellphoneNumber);
+            p.Add("@CellphoneNumber", model.CellphoneNumber);
             p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-            connection.Execute("dbo.spPerson_Insert", p, commandType: CommandType.StoredProcedure);
-            //model.Id = p.Get<int>("@id");
+            connection.Execute("dbo.spPeople_Insert", p, commandType: CommandType.StoredProcedure);
+            model.Id = p.Get<int>("@id");
             return model;
         }
 
@@ -35,7 +36,7 @@ namespace TrackerLibrary.DataAccess
         public PrizeModel CreatePrize(PrizeModel model)
         {
             //model.Id = 1;
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("TournamentTracker")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@PlaceNumber", model.PlaceNumber);
@@ -48,6 +49,40 @@ namespace TrackerLibrary.DataAccess
                 model.Id = p.Get<int>("@id");
             }
             return model;
+        }
+
+        public TeamModel CreateTeam(TeamModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TeamName", model.TeamName);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.sp_Teams_Insert", p, commandType: CommandType.StoredProcedure);
+                model.Id = p.Get<int>("@id");
+
+                foreach(PersonModel tm in model.TeamMembers)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@TeamId", model.Id);
+                    p.Add("@PersonId", tm.Id);
+
+                    connection.Execute("dbo.sp_TeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
+                }
+                return model;
+            }
+        }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            List<PersonModel> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<PersonModel>("dbo.sp_People_GetAll").ToList();
+            }
+            return output;
+            
         }
     }
 }

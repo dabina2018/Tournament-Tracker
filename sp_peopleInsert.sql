@@ -10,12 +10,25 @@ GO
 -- Create Date: <Create Date, , >
 -- Description: <Description, , >
 -- =============================================
-CREATE PROCEDURE dbo.spPrizes_Insert
+CREATE PROCEDURE dbo.spPeople_Insert
 (
     -- Add the parameters for the stored procedure here
-    @PlaceNumber int, @PlaceName nvarchar(50), @PrizeAmount money, @PrizePercentage float,
-	@id int = 0 output
+    @FirstName varchar(50), @LastName varchar(50), @EmailAddress varchar(50), @CellphoneNumber varchar(50), @id int =0 OUTPUT
+   
 )
+AS
+BEGIN
+    -- SET NOCOUNT ON added to prevent extra result sets from
+    -- interfering with SELECT statements.
+    SET NOCOUNT ON;
+	insert into dbo.People (FirstName, LastName, EmailAddress, CellphoneNumber)
+	values(@FirstName, @LastName, @EmailAddress, @CellphoneNumber);
+	select @id = SCOPE_IDENTITY();
+	end
+	--======================================================================================
+
+CREATE PROCEDURE sp_People_GetAll
+
 AS
 BEGIN
     -- SET NOCOUNT ON added to prevent extra result sets from
@@ -23,11 +36,6 @@ BEGIN
     SET NOCOUNT ON
 
     -- Insert statements for procedure here
-    INSERT INTO dbo.Prizes (PlaceNumber, PlaceName, PrizeAmount, PrizePercentage)
-	values(@PlaceNumber, @PlaceName, @PrizeAmount, @PrizePercentage);
-
-	select @id = SCOPE_IDENTITY();
+    SELECT* FROM dbo.People
 END
-GO
 
-drop procedure dbo.spPrizes;

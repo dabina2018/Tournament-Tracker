@@ -33,7 +33,12 @@ namespace TournamentTrackerUI
                 PrizeModel model = new PrizeModel(
                     placeName_textbx.Text, placeNumber_textbx.Text, prizeAmt_textbx.Text, prizePercentage_textbx.Text);
                 
-                GlobalConfig.Connection.CreatePrize(model);                
+                GlobalConfig.Connection.CreatePrize(model);
+
+                placeName_textbx.Text = "";
+                placeNumber_textbx.Text = "";
+                prizeAmt_textbx.Text = "0";
+                prizePercentage_textbx.Text = "0";
             }
             else { MessageBox.Show("This form has invalid information. Please check it and try again."); }
 

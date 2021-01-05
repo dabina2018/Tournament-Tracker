@@ -32,6 +32,12 @@ DENY INSERT, UPDATE, SELECT, DELETE ON MatchupEntries TO sp_executor
 
 --grant permisson for staroed procedure for that role
 GRANT EXECUTE ON dbo.spPrizes_Insert TO sp_executor
+GRANT EXECUTE ON dbo.spPeople_Insert TO sp_executor
+GRANT EXECUTE ON sp_People_GetAll TO sp_executor
+GRANT EXECUTE ON sp_Teams_Insert TO sp_executor
+GRANT EXECUTE ON sp_TeamMembers_Insert TO sp_executor
+
+GRANT EXECUTE ON sp_Team_GetBy_Tournament TO sp_executorp
 
 
 --READ ONly can only execute Select statements
