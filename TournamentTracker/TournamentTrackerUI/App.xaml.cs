@@ -30,7 +30,7 @@ namespace TournamentTrackerUI
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            TrackerLibrary.DataAccess.GlobalConfig.InitializeConnections(TrackerLibrary.DatabaseType.TextFile);
+            TrackerLibrary.DataAccess.GlobalConfig.InitializeConnections(TrackerLibrary.DatabaseType.Sql);
         }
     }
 }

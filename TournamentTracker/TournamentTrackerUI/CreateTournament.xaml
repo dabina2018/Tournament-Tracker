@@ -5,28 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TournamentTrackerUI"
       mc:Ignorable="d" 
-      Title="CreateTournament">
+      Title="CreateTournament" Height="600" Width="600">
 
     <Grid>
-        <Label Content="Create Tournament" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" Width="191" Height="37"/>
-        <Label x:Name="tournamentNameLabel" Content="Tournament Name" HorizontalAlignment="Left" Margin="17,70,0,0" VerticalAlignment="Top" Height="31" Width="141"/>
-        <TextBox x:Name="tournamentNameValue" HorizontalAlignment="Left" Margin="31,101,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="23"/>
-        <Label Content="Entry Fee" HorizontalAlignment="Left" Margin="17,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.157,0.527" Height="31" Width="76"/>
-        <TextBox HorizontalAlignment="Left" Margin="31,175,0,0" Text="0.00" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="23"/>
-        <Label x:Name="selectTeamLabel" Content="Select Team" HorizontalAlignment="Left" Margin="17,220,0,0" VerticalAlignment="Top" Height="31" Width="93"/>
-        <ListBox Margin="31,251,426,170"/>
-        <Label x:Name="addTeamLink" HorizontalAlignment="Right" Margin="0,220,426,0" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.ColumnSpan="1"  Content="Create Tournament" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="178" />
+        <Label Grid.Row="0" Content="Tournament Name" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" Height="30" Width="186" />
+        <TextBox Grid.ColumnSpan="1" x:Name="tournamentNameValue" HorizontalAlignment="Left" Margin="31,106,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Height="23"/>
+
+        <Label Grid.ColumnSpan="1" Content="Entry Fee" HorizontalAlignment="Left" Margin="17,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.157,0.527" Width="99" Height="31" />
+        <TextBox x:Name="entryFeeValue" HorizontalAlignment="Left" Margin="143,159,0,0" Text="0.00" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="61" />
+        <Label Grid.ColumnSpan="1" Content="Select Team" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.653,-1.215" Height="32" Width="93" Grid.Row="1"/>
+        <ListBox Grid.Row="1" x:Name="selectTeam_listbx" Margin="24,48,25,111"/>
+        <Label x:Name="addTeamLink" HorizontalAlignment="Right" Margin="0,12,6,154" Width="102" Grid.Row="1">
             <Hyperlink NavigateUri="http://search.msn.com">Create New</Hyperlink>
         </Label>
-        <Button x:Name="addTeamBtn" Content="Add Team" HorizontalAlignment="Left" Margin="74,325,0,0" VerticalAlignment="Top" Width="106"/>
-        <Button x:Name="createPrizeBtn" Content="Create Prize" HorizontalAlignment="Left" Margin="74,374,0,0" VerticalAlignment="Top" Width="105"/>
-        <ListBox x:Name="tournamentPlayersListBx2" Margin="342,258,172,159"/>
-        <Label x:Name="tournamentPlayersLabel" Content="Teams / Players" HorizontalAlignment="Left" Margin="334,0,0,0" VerticalAlignment="Center" Width="162"/>
-        <Button x:Name="deletePlayersBtn2" Content="Delete Selected" HorizontalAlignment="Left" Margin="558,279,0,0" VerticalAlignment="Top" Height="32" Width="114"/>
-        <ListBox x:Name="tournamentPlayersListBx1" Margin="342,110,172,307"/>
-        <Label x:Name="prizesLabel" Content="Teams / Players" HorizontalAlignment="Left" Margin="334,79,0,0" VerticalAlignment="Top" Width="162"/>
-        <Button x:Name="deletePlayersBtn1" Content="Delete Selected" HorizontalAlignment="Left" Margin="558,137,0,0" VerticalAlignment="Top" Height="32" Width="114"/>
-        <Button x:Name="createTournamentBtn" Content="Create Tournament" HorizontalAlignment="Left" Margin="268,434,0,0" VerticalAlignment="Top" Width="147"/>
+        <Button Grid.Row="1" x:Name="addTeamBtn" Content="Add Team" HorizontalAlignment="Left" Margin="54,132,0,26" Width="144" Click="addTeamBtn_Click"/>
+        <Button Grid.Row="1" x:Name="createPrizeBtn" HorizontalAlignment="Left" Margin="54,199,0,155" Width="144" Click="createPrizeBtn_Click" Grid.RowSpan="2">
+            <Hyperlink NavigateUri="http://search.msn.com">Create Prize</Hyperlink>
+        </Button>
+        <Label Content="Prizes" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="162" Height="38" Grid.Column="1" Grid.Row="1"/>
+        <ListBox x:Name="tournamentTeams_ListBx" Margin="0,105,6,27" Grid.Column="1"/>
+        <Label Content="Teams / Players" HorizontalAlignment="Left" Margin="6,72,0,0" VerticalAlignment="Top" Width="162" RenderTransformOrigin="0.296,1.63" Grid.Column="1" Height="31"/>
+        <Button x:Name="createTournamentBtn" Content="Create Tournament" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Width="148" Height="52" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="deleteTeamsPlayers_Btn" Content="Delete Selected" HorizontalAlignment="Center" Margin="0,118,0,0" VerticalAlignment="Top" Height="34" Width="114" RenderTransformOrigin="0.447,2.688" Grid.Column="2"/>
+        <Button x:Name="deletePrizes_btn" Content="Delete Selected" HorizontalAlignment="Center" Margin="0,52,0,0" VerticalAlignment="Top" Height="32" Width="114" Grid.Column="2" Grid.Row="1"/>
+
+
+        <ListBox x:Name="prizes_ListBx" Margin="0,48,6,65" Grid.Row="1" Grid.Column="1"/>
+
+
+
+
+
 
     </Grid>
-    </Page>
+</Page>

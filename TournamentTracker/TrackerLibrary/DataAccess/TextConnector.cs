@@ -69,7 +69,15 @@ namespace TrackerLibrary
             return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
         }
 
+        public TournamentModel CreateTournament(TournamentModel model)
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<TeamModel> GetTeam_All()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

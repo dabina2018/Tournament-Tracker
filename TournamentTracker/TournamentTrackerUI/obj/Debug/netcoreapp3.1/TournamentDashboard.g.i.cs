@@ -77,7 +77,7 @@ namespace TournamentTrackerUI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TournamentTrackerUI;component/tournamentdashboard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TournamentTrackerUI;V1.0.0.0;component/tournamentdashboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TournamentDashboard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
