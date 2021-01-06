@@ -18,15 +18,16 @@ namespace TournamentTrackerUI
     /// <summary>
     /// Interaction logic for CreatePrize.xaml
     /// </summary>
-    public partial class CreatePrize : Page
+    public partial class CreatePrize : Window
     {
-        public CreatePrize()
+        IPrizeRequestor callingForm;
+        public CreatePrize(IPrizeRequestor caller)
         {
             InitializeComponent();
-            //IDataConnection data = new InitializeConnections(true, true);
+            callingForm = caller; //makes caller (prizemodel) available to create prize method
         }
 
-        private void createPrize_Btn_Click(object sender, RoutedEventArgs e)
+        private void CreatePrize_Btn_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateForm())
             {
@@ -34,6 +35,9 @@ namespace TournamentTrackerUI
                     placeName_textbx.Text, placeNumber_textbx.Text, prizeAmt_textbx.Text, prizePercentage_textbx.Text);
                 
                 GlobalConfig.Connection.CreatePrize(model);
+                MessageBox.Show("Prize was submitted");
+                callingForm.PrizeComplete(model);
+                this.Close();
 
                 placeName_textbx.Text = "";
                 placeNumber_textbx.Text = "";

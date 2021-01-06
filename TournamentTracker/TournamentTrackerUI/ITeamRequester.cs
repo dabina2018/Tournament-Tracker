@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using TrackerLibrary.Models;
-
 namespace TournamentTrackerUI
 {
-    public interface IPrizeRequestor
+    public interface ITeamRequester
     {
-        void PrizeComplete(PrizeModel model);
+        void TeamComplete(TeamModel model);
     }
 }

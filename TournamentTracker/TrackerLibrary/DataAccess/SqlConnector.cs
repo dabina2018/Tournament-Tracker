@@ -53,25 +53,23 @@ namespace TrackerLibrary.DataAccess
 
         public TeamModel CreateTeam(TeamModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            using IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db));
+            var p = new DynamicParameters();
+            p.Add("@TeamName", model.TeamName);
+            p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+            connection.Execute("dbo.sp_Teams_Insert", p, commandType: CommandType.StoredProcedure);
+            model.Id = p.Get<int>("@id");
+
+            foreach (PersonModel tm in model.TeamMembers)
             {
-                var p = new DynamicParameters();
-                p.Add("@TeamName", model.TeamName);
-                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+                p = new DynamicParameters();
+                p.Add("@TeamId", model.Id);
+                p.Add("@PersonId", tm.Id);
 
-                connection.Execute("dbo.sp_Teams_Insert", p, commandType: CommandType.StoredProcedure);
-                model.Id = p.Get<int>("@id");
-
-                foreach(PersonModel tm in model.TeamMembers)
-                {
-                    p = new DynamicParameters();
-                    p.Add("@TeamId", model.Id);
-                    p.Add("@PersonId", tm.Id);
-
-                    connection.Execute("dbo.sp_TeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
-                }
-                return model;
+                connection.Execute("dbo.sp_TeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
             }
+            return model;
         }
 
         public TournamentModel CreateTournament(TournamentModel model)

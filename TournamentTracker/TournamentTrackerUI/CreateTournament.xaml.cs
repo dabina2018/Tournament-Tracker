@@ -19,7 +19,7 @@ namespace TournamentTrackerUI
     /// <summary>
     /// Interaction logic for CreateTournament.xaml
     /// </summary>
-    public partial class CreateTournament : Page
+    public partial class CreateTournament : Window, IPrizeRequestor, ITeamRequester
     {
         List<TeamModel> availableTeams = GlobalConfig.Connection.GetTeam_All();
         List<TeamModel> selectedTeams = new List<TeamModel>();
@@ -44,7 +44,7 @@ namespace TournamentTrackerUI
             prizes_ListBx.DisplayMemberPath = "PlaceName";
         }
 
-        private void addTeamBtn_Click(object sender, RoutedEventArgs e)
+        private void AddTeamBtn_Click(object sender, RoutedEventArgs e)
         {
             TeamModel tm = (TeamModel)selectTeam_listbx.SelectedItem;
             if(tm != null)
@@ -56,15 +56,52 @@ namespace TournamentTrackerUI
             }
         }
 
-        private void createPrizeBtn_Click(object sender, RoutedEventArgs e)
+        private void CreatePrizeBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Call the Create Prize Form
-            CreatePrize page = new CreatePrize();
-            this.NavigationService.Navigate(page);
-            //Get back from the form a PrizeModel
-            //Take the PrizeModel and put it into our list of slected prizes
+            //Call the Create Prize Page
+            CreatePrize page = new CreatePrize(this);
+            page.Show();
+            //Page returns a PrizeModel
+      
         }
 
+        public void PrizeComplete(PrizeModel model)
+        {
+            //Take the PrizeModel and put it into our list of slected prizes
+            selectedPrizes.Add(model);
+            InitializeLists();
+        }
+        public void TeamComplete(TeamModel model)
+        {
+            selectedTeams.Add(model);
+            InitializeLists();
+        }
 
+        private void CreateTeamLink_Click(object sender, RoutedEventArgs e)
+        {
+            CreateTeam page = new CreateTeam(this);
+            page.Show();
+        }
+
+        private void RemovePrizes_btn_Click(object sender, RoutedEventArgs e)
+        {
+            PrizeModel p = (PrizeModel)prizes_ListBx.SelectedItem;
+            if(p != null)
+            {
+                selectedPrizes.Remove(p);
+                InitializeLists();
+
+            }
+        }
+        private void RemoveSelectedTeam_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            TeamModel tm = (TeamModel)tournamentTeams_ListBx.SelectedItem;
+            if(tm != null)
+            {
+                selectedTeams.Remove(tm);
+                availableTeams.Add(tm);
+                InitializeLists();
+            }
+        }
     }
 }

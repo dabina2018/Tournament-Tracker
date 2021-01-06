@@ -12,14 +12,16 @@ namespace TournamentTrackerUI
     /// <summary>
     /// Interaction logic for CreateTream.xaml
     /// </summary>
-    public partial class CreateTream : Page
+    public partial class CreateTeam : Window
     {
-        private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All(); //selectTeamMember dropdown
         //TO DO - Implment as Observable Collection, use NotifyPropertyChanged - https://www.wpf-tutorial.com/data-binding/responding-to-changes/
+        private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All(); //selectTeamMember dropdown
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>(); // teamMember dropdown
-        public CreateTream()
+        private ITeamRequester callingForm;
+        public CreateTeam(ITeamRequester caller)
         {
             InitializeComponent();
+            callingForm = caller;
             //SampleData();
             TeamListFunctionality();
         }
@@ -122,6 +124,8 @@ namespace TournamentTrackerUI
             GlobalConfig.Connection.CreateTeam(tm);
 
             // TODO - Reset and/or Closeout form/page after use
+            callingForm.TeamComplete(tm);
+            this.Close();
         }
     }
 }
