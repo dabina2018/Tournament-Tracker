@@ -121,7 +121,7 @@ namespace TournamentTrackerUI
             tm.EntryFee = fee;
             tm.Prizes = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
-            //create matchups
+            //TODO create matchups
 
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);
