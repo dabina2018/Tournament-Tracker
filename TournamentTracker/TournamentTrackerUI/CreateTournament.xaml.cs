@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
+using TrackerLibrary;
 
 namespace TournamentTrackerUI
 {
@@ -121,10 +122,14 @@ namespace TournamentTrackerUI
             tm.EntryFee = fee;
             tm.Prizes = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
-            //TODO create matchups
+            //TODO wireup matchups
+            TournamentLogic.CreateRounds(tm);
+             
+
 
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);
+            MessageBox.Show("Tournament was successfully created!");
         }
     }
 }

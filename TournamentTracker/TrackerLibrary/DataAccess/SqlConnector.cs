@@ -50,7 +50,6 @@ namespace TrackerLibrary.DataAccess
             }
             return model;
         }
-
         public TeamModel CreateTeam(TeamModel model)
         {
             using IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db));
@@ -71,7 +70,6 @@ namespace TrackerLibrary.DataAccess
             }
             return model;
         }
-
         public void CreateTournament(TournamentModel model)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
@@ -79,16 +77,18 @@ namespace TrackerLibrary.DataAccess
                 SaveTournament(connection, model);
                 SaveTournamentPrizes(connection, model);
                 SaveTournamentEntries(connection, model);
+                SaveTournamentRounds(connection, model);
                 //return model;
             }
         }
+
         private void SaveTournament(IDbConnection connection, TournamentModel model)
         {
             var p = new DynamicParameters();
             p.Add("@TournamentName", model.TournamentName);
             p.Add("@EntryFee", model.EntryFee);
             p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
-            connection.Execute("dbo.sp_Tournaments_Insert", p, commandType: CommandType.StoredProcedure);
+            connection.Execute("dbo.spTournaments_Insert", p, commandType: CommandType.StoredProcedure);
             model.Id = p.Get<int>("@id");
         }
         private void SaveTournamentPrizes(IDbConnection connection, TournamentModel model)
@@ -113,6 +113,50 @@ namespace TrackerLibrary.DataAccess
                 connection.Execute("dbo.sp_TournamentEntries_Insert", p, commandType: CommandType.StoredProcedure);
             }
         }
+        private void SaveTournamentRounds(IDbConnection connection, TournamentModel model)
+        {
+            //List<List<MatchupModel>>Rounds
+            //List<MatchupEntryModel> Entries
+
+            // loop thru the rounds
+            foreach (List<MatchupModel> round in model.Rounds)
+            {
+                //loop thru the matchups
+                foreach (MatchupModel matchup in round)
+                {
+                    // save the matchup
+                    var p = new DynamicParameters();
+                    p.Add("@TournamentId", model.Id);
+                    p.Add("@MatchupRound", matchup.MatchupRound);
+                    p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                    connection.Execute("dbo.sp_Matchups_Insert", p, commandType: CommandType.StoredProcedure);
+                    matchup.Id = p.Get<int>("@id");
+
+                    //loop thru the entries and save
+                    foreach (MatchupEntryModel entry in matchup.Entries)
+                    {
+                        p = new DynamicParameters();
+                        p.Add("@MatchupId", matchup.Id);
+                        //p.Add("@ParentMatchupId", entry.ParentMatchup.Id);
+                        if (entry.ParentMatchup == null) {p.Add("@ParentMatchupId", null);}
+                        else {p.Add("ParentMatchupId", entry.ParentMatchup.Id);}
+
+                        if(entry.TeamCompeting == null) {p.Add("TeamCompetingId", null);}
+                        else {p.Add("TeamCompetingId", entry.TeamCompeting.Id);}
+                        //p.Add("@TeamCompetingId", entry.TeamCompeting.Id);
+                        p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                        connection.Execute("dbo.sp_MatchupEntries_Insert", p, commandType: CommandType.StoredProcedure);
+                        
+                    }
+                }
+
+            }
+                
+                    
+                   
+        }
 
         public List<PersonModel> GetPerson_All()
         {
@@ -124,7 +168,6 @@ namespace TrackerLibrary.DataAccess
             return output;
 
         }
-
         public List<TeamModel> GetTeam_All()
         {
             List<TeamModel> output;

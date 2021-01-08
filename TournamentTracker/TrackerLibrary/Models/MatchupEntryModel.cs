@@ -6,8 +6,10 @@ namespace TrackerLibrary.Models
 {
     public class MatchupEntryModel
     {
+        //unique identifier
+        public int If { get; set; }
         /// <summary>
-        /// write a description here... Represents one team in teh matchup
+        /// Represents one team in teh matchup
         /// </summary>
         public TeamModel TeamCompeting { get; set; }
         /// <summary>
@@ -21,9 +23,6 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// 
         /// </summary>
-        public MatchupEntryModel(double initialScore)
-        {
-            Console.WriteLine();
-        }
+       
     }
 }

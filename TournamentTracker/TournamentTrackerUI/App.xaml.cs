@@ -16,7 +16,7 @@ namespace TournamentTrackerUI
 {
     /// <summary>
     /// Interaction logic for App.xaml
-    /// </summary>
+    /// </summary> 
     public partial class App : Application
     {
         /* [STAThread()]
@@ -30,7 +30,7 @@ namespace TournamentTrackerUI
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            TrackerLibrary.DataAccess.GlobalConfig.InitializeConnections(TrackerLibrary.DatabaseType.TextFile);
+            TrackerLibrary.DataAccess.GlobalConfig.InitializeConnections(TrackerLibrary.DatabaseType.Sql);
         }
     }
 }
