@@ -9,10 +9,13 @@ namespace TrackerLibrary
 {
     class TextConnector : IDataConnection
     {
+        //TODO - Refactor so constants are not duplicated
         private const string PrizesFile = "PrizeModels.csv";
         private const string PeopleFile = "PersonModels.csv";
         private const string TeamFile = "TeamModel.csv";
         private const string TournamentFile = "TournamentModels.csv";
+        private const string MatchupFile = "MatchupModels.csv";
+        private const string MatchupEntryFile = "MatchupEntryModels.csv";
 
         public PrizeModel CreatePrize(PrizeModel model)
         {
@@ -56,7 +59,7 @@ namespace TrackerLibrary
             int currentId = 1;
             if(teams.Count > 0)
             {
-                currentId = teams.OrderByDescending(x => x.Id).First().Id = 1;
+                currentId = teams.OrderByDescending(x => x.Id).First().Id + 1;
             }
             model.Id = currentId;
             teams.Add(model);
@@ -72,9 +75,9 @@ namespace TrackerLibrary
                 currentId = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
             }
             model.Id = currentId;
+            model.SaveRoundsToFile(MatchupFile, MatchupEntryFile);
             tournaments.Add(model);
             tournaments.SaveToTournamentFile(TournamentFile);
-            //return model;
         }
         public List<PersonModel> GetPerson_All()
         {

@@ -25,6 +25,7 @@ namespace TournamentTrackerUI
         List<TeamModel> availableTeams = GlobalConfig.Connection.GetTeam_All();
         List<TeamModel> selectedTeams = new List<TeamModel>();
         List<PrizeModel> selectedPrizes = new List<PrizeModel>();
+        //private ITournamentRequester callingForm;
         public CreateTournament()
         {
             InitializeComponent();
@@ -124,12 +125,10 @@ namespace TournamentTrackerUI
             tm.EnteredTeams = selectedTeams;
             //TODO wireup matchups
             TournamentLogic.CreateRounds(tm);
-             
-
-
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);
             MessageBox.Show("Tournament was successfully created!");
+            //callingForm
         }
     }
 }
