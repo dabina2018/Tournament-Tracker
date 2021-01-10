@@ -124,8 +124,6 @@ namespace TrackerLibrary.DataAccess
                     {
                         tm.EnteredTeams.Add(teams.Where(x => x.Id == teamId).First()); 
                     }
-                    
-                    
                 }
                 if (cols[4].Length == 0) 
                 {
@@ -143,10 +141,20 @@ namespace TrackerLibrary.DataAccess
                 {
                     string[] msText = round.Split('^');
                     List<MatchupModel> ms = new List<MatchupModel>();
+                    //=========================================
+                    //int teamId;
+                    //if (int.TryParse(id, out teamId))
+                    //{tm.EnteredTeams.Add(teams.Where(x => x.Id == teamId).First());  }
+
+                    //ms.Add(matchups.Where(x => x.Id == int.Parse(matchupModelTextId)).First());
+                    //==========================================
                     foreach (string matchupModelTextId in msText)
                     {
-                        ms.Add(matchups.Where(x => x.Id == int.Parse(matchupModelTextId)).First());
-
+                        int matchupId=1;
+                        if(int.TryParse(cols[3], out matchupId))
+                        {
+                            ms.Add(matchups.Where(x => x.Id == matchupId).First());
+                        }
                     }
                     tm.Rounds.Add(ms);
                 }
