@@ -8,7 +8,7 @@ C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\Tourn
 TournamentTrackerUI
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\App.xaml
 6541598324
 
@@ -16,5 +16,5 @@ C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\Tourn
 196-149107389
 CreatePrize.xaml;CreateTeam.xaml;CreateTournament.xaml;MainWindow.xaml;TournamentDashboard.xaml;TournamentViewer.xaml;
 
-True
+False
 

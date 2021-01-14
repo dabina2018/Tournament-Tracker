@@ -20,7 +20,7 @@ namespace TournamentTrackerUI
     /// <summary>
     /// Interaction logic for TournamentDashboard.xaml
     /// </summary>
-    public partial class TournamentDashboard : Page
+    public partial class TournamentDashboard : Window
     {
         List<TournamentModel> tournaments = GlobalConfig.Connection.GetTournaments_All();
         public TournamentDashboard()
@@ -33,10 +33,19 @@ namespace TournamentTrackerUI
             existingTournament_ListBx.ItemsSource = tournaments;
             existingTournament_ListBx.DisplayMemberPath = "TournamentName";
         }
-
-        private void loadTournament_Btn_Click(object sender, RoutedEventArgs e)
+        private void createTournament_Btn_Click(object sender, RoutedEventArgs e)
         {
+            CreateTournament page = new CreateTournament();            
+            page.Show();
+            InitializeTournamentList();
 
         }
+        private void loadTournament_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            TournamentModel tm = (TournamentModel)existingTournament_ListBx.SelectedItem;
+            TournamentViewer page = new TournamentViewer(tm);
+            page.Show();
+        }
+
     }
 }

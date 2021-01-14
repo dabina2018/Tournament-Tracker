@@ -9,7 +9,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
+
 using System.Windows.Shapes;
 using TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
@@ -128,6 +128,7 @@ namespace TournamentTrackerUI
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);
             MessageBox.Show("Tournament was successfully created!");
+            this.Close();
             //callingForm
         }
     }

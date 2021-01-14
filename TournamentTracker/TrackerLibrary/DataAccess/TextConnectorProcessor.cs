@@ -366,10 +366,9 @@ namespace TrackerLibrary.DataAccess
         {
             string[] ids = input.Split('|');
             List<MatchupEntryModel> output = new List<MatchupEntryModel>();
-            //column structure: 0=id 1=TeamCompeting 2=Score, 3=ParentMatchup
             List<string> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile();
             List<string> matchingEntries = new List<string>();
-
+            //column structure: 0=id 1=TeamCompeting 2=Score, 3=ParentMatchup
             foreach (string id in ids)
             {
                 foreach(string entry in entries)
