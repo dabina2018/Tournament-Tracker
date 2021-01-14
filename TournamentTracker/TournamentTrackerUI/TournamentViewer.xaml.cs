@@ -76,7 +76,10 @@ namespace TournamentTrackerUI
                     selectedMatchups.Clear();
                     foreach (MatchupModel m in matchups)
                     {
-                        selectedMatchups.Add(m);
+                        if (m.Winner != null || (bool)!unplayedRoundCheckBx.IsChecked)
+                        {
+                            selectedMatchups.Add(m); 
+                        }
                     }
                 }
             }
@@ -121,6 +124,11 @@ namespace TournamentTrackerUI
         private void matchupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LoadMatchupScore((MatchupModel)matchupListBox.SelectedItem);
+        }
+
+        private void unplayedRoundCheckBx_Checked(object sender, RoutedEventArgs e)
+        {
+            LoadMatchups((int)roundComboBx.SelectedItem);
         }
     }
 }
