@@ -29,9 +29,9 @@ namespace TournamentTrackerUI
         {
             InitializeComponent();
             tournament = tournamentModel;
-            InitializeMatchupsList();
             LoadPageData();
             LoadRounds();
+            InitializeMatchupsList();
         }
         private void LoadPageData()
         {
@@ -54,7 +54,7 @@ namespace TournamentTrackerUI
             rounds.Clear();
             rounds.Add(1);
             int currentRound = 1;
-            foreach (List<MatchupModel> matchups in tournament.Rounds)
+            foreach(List<MatchupModel> matchups in tournament.Rounds)
             {
                 if(matchups.First().MatchupRound > currentRound)
                 {
@@ -63,7 +63,9 @@ namespace TournamentTrackerUI
                 }
             }
             //InitializeRoundsLists();
-            LoadMatchups(1);
+            //roundComboBx.SelectedItem = rounds[0];
+            //InitializeMatchupsList();
+            //LoadMatchups(1);
         }
 
         private void roundComboBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,13 +85,14 @@ namespace TournamentTrackerUI
                         selectedMatchups.Add(m);
                     }
                     //selectedMatchups = matchups;
+                    //LoadMatchupScore();
                 }
             }
-            InitializeMatchupsList();
+            LoadMatchupScore(selectedMatchups.First());
         }
-        private  void LoadMatchupScore()
+        private  void LoadMatchupScore(MatchupModel m )
         {
-            MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
+            //MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
            
             for (int i = 0; i < m.Entries.Count; i++)
             {
@@ -130,7 +133,7 @@ namespace TournamentTrackerUI
         }
         private void matchupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LoadMatchupScore();
+            LoadMatchupScore((MatchupModel)matchupListBox.SelectedItem);
         }
     }
 }
