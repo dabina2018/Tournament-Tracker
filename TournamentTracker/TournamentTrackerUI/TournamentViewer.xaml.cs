@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -21,13 +22,14 @@ namespace TournamentTrackerUI
     public partial class TournamentViewer : Window
     {
         private TournamentModel tournament;
-        //IEnumerable<int> rounds = new List<int>();
-        List<int> rounds = new List<int>();
+        IEnumerable<int> rounds = new List<int>();
+        //List<int> rounds = new List<int>();
         List<MatchupModel> selectedMatchups = new List<MatchupModel>();
         public TournamentViewer(TournamentModel tournamentModel)
         {
             InitializeComponent();
             tournament = tournamentModel;
+            InitializeMatchupsList();
             LoadPageData();
             LoadRounds();
         }
@@ -37,18 +39,19 @@ namespace TournamentTrackerUI
         }
         private void InitializeRoundsLists()
         {
-            roundComboBx.ItemsSource = null;
-            roundComboBx.ItemsSource = rounds;
+            //roundComboBx.ItemsSource = null;
+            
         }
         private void InitializeMatchupsList()
         {
-            matchupListBox.ItemsSource = null;
+            //matchupListBox.ItemsSource = null;
+            roundComboBx.ItemsSource = rounds;
             matchupListBox.ItemsSource = selectedMatchups;
             matchupListBox.DisplayMemberPath= "DisplayName";
         }
         private void LoadRounds()
         {
-            rounds = new List<int>();
+            rounds.Clear();
             rounds.Add(1);
             int currentRound = 1;
             foreach (List<MatchupModel> matchups in tournament.Rounds)
@@ -59,31 +62,28 @@ namespace TournamentTrackerUI
                     rounds.Add(currentRound);
                 }
             }
-            InitializeRoundsLists();
+            //InitializeRoundsLists();
+            LoadMatchups(1);
         }
 
         private void roundComboBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LoadMatchups();
+            LoadMatchups((int)roundComboBx.SelectedIndex);
         }
-        private void LoadMatchups()
+        private void LoadMatchups( int round)
         {
-            int round = (int)roundComboBx.SelectedIndex;
+            //int round = (int)roundComboBx.SelectedIndex;
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
-                //if (matchups.First().MatchupRound > round)
-                //{
+               // if(matchups.First().MatchupRound == round)
+               // {
                     selectedMatchups.Clear();
-                    
                     foreach (MatchupModel m in matchups)
                     {
-                        if(m.Winner != null)
-                        {
-                            selectedMatchups.Add(m);
-                        }
+                        selectedMatchups.Add(m);
                     }
-                    selectedMatchups = matchups;
-                //}
+                    //selectedMatchups = matchups;
+              //  }
             }
             InitializeMatchupsList();
         }
