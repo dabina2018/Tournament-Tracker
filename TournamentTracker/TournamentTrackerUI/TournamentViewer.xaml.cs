@@ -22,8 +22,8 @@ namespace TournamentTrackerUI
     public partial class TournamentViewer : Window
     {
         private TournamentModel tournament;
-        IEnumerable<int> rounds = new List<int>();
-        //List<int> rounds = new List<int>();
+        //IEnumerable<int> rounds = new List<int>();
+        List<int> rounds = new List<int>();
         List<MatchupModel> selectedMatchups = new List<MatchupModel>();
         public TournamentViewer(TournamentModel tournamentModel)
         {
@@ -40,12 +40,12 @@ namespace TournamentTrackerUI
         private void InitializeRoundsLists()
         {
             //roundComboBx.ItemsSource = null;
-            
+            roundComboBx.ItemsSource = rounds;
         }
         private void InitializeMatchupsList()
         {
             //matchupListBox.ItemsSource = null;
-            roundComboBx.ItemsSource = rounds;
+            //roundComboBx.ItemsSource = rounds;
             matchupListBox.ItemsSource = selectedMatchups;
             matchupListBox.DisplayMemberPath= "DisplayName";
         }
@@ -75,15 +75,15 @@ namespace TournamentTrackerUI
             //int round = (int)roundComboBx.SelectedIndex;
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
-               // if(matchups.First().MatchupRound == round)
-               // {
+                if(matchups.First().MatchupRound == round)
+                {
                     selectedMatchups.Clear();
                     foreach (MatchupModel m in matchups)
                     {
                         selectedMatchups.Add(m);
                     }
                     //selectedMatchups = matchups;
-              //  }
+                }
             }
             InitializeMatchupsList();
         }
