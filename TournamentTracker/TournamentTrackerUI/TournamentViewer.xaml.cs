@@ -22,16 +22,19 @@ namespace TournamentTrackerUI
     public partial class TournamentViewer : Window
     {
         private TournamentModel tournament;
-        //IEnumerable<int> rounds = new List<int>();
-        List<int> rounds = new List<int>();
-        List<MatchupModel> selectedMatchups = new List<MatchupModel>();
+        BindingList<int> rounds = new BindingList<int>();
+        BindingList<MatchupModel> selectedMatchups = new BindingList<MatchupModel>();
+        //List<int> rounds = new List<int>();
+       // List<MatchupModel> selectedMatchups = new List<MatchupModel>();
         public TournamentViewer(TournamentModel tournamentModel)
         {
             InitializeComponent();
             tournament = tournamentModel;
+            InitializeRoundsLists();
+            InitializeMatchupsList();
             LoadPageData();
             LoadRounds();
-            InitializeMatchupsList();
+            
         }
         private void LoadPageData()
         {
@@ -39,13 +42,13 @@ namespace TournamentTrackerUI
         }
         private void InitializeRoundsLists()
         {
-            //roundComboBx.ItemsSource = null;
+            
             roundComboBx.ItemsSource = rounds;
+            
         }
         private void InitializeMatchupsList()
         {
-            //matchupListBox.ItemsSource = null;
-            //roundComboBx.ItemsSource = rounds;
+            
             matchupListBox.ItemsSource = selectedMatchups;
             matchupListBox.DisplayMemberPath= "DisplayName";
         }
@@ -65,12 +68,13 @@ namespace TournamentTrackerUI
             //InitializeRoundsLists();
             //roundComboBx.SelectedItem = rounds[0];
             //InitializeMatchupsList();
-            //LoadMatchups(1);
+            LoadMatchups(1);
+
         }
 
         private void roundComboBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LoadMatchups((int)roundComboBx.SelectedIndex);
+            LoadMatchups((int)roundComboBx.SelectedItem);
         }
         private void LoadMatchups( int round)
         {
@@ -84,10 +88,12 @@ namespace TournamentTrackerUI
                     {
                         selectedMatchups.Add(m);
                     }
-                    //selectedMatchups = matchups;
+                     //selectedMatchups = matchups;
+                    //InitializeMatchupsList();
                     //LoadMatchupScore();
                 }
             }
+            
             LoadMatchupScore(selectedMatchups.First());
         }
         private  void LoadMatchupScore(MatchupModel m )
