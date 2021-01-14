@@ -130,5 +130,61 @@ namespace TournamentTrackerUI
         {
             LoadMatchups((int)roundComboBx.SelectedItem);
         }
+
+        private void scoreBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
+            double teamOneScore = 0;
+            double teamTwoScore = 0;
+            for (int i = 0; i < m.Entries.Count; i++)
+            {
+                if (i == 0)
+                {
+                    if (m.Entries[0].TeamCompeting != null)
+                    {
+                        //teamOneLabel.Content = m.Entries[0].TeamCompeting.TeamName;
+                        //double scoreVal = 0;
+                        bool scoreValid = double.TryParse(teamOneScore_textbx.Text, out teamOneScore);
+                        if (scoreValid)
+                        {
+                            m.Entries[0].Score = teamOneScore; 
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid score for team 1; Score must be an integer");
+                        return;
+                    }
+                }
+                if (i == 1)
+                {
+                    ///teamTwoLabel.Content = m.Entries[1].TeamCompeting.TeamName;
+                    bool scoreValid = double.TryParse(teamTwoScore_textbx.Text, out teamTwoScore);
+                    if (scoreValid)
+                    {
+                        m.Entries[1].Score = teamTwoScore;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid score for team 2; Score must be an integer");
+                    }
+                }
+            }
+            if(teamOneScore > teamTwoScore )
+            {
+                //Team one wins
+                m.Winner = m.Entries[0].TeamCompeting;
+            }
+            else if
+            {
+                //Team one wins
+                m.Winner = m.Entries[1].TeamCompeting;
+            }
+            else
+            {
+                MessageBox.Show("Tie Game! there is no winner");
+            }
+        }
     }
 }

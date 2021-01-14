@@ -55,9 +55,9 @@
         </Label>
         <Label x:Name="teamTwoScoreLabel" Content="Score: " HorizontalAlignment="Left" Margin="35,166,0,0" VerticalAlignment="Top" Height="28" Width="68" RenderTransformOrigin="0.694,0.922" Grid.Column="1" Grid.Row="3"/>
         <TextBox x:Name="teamOneScore_textbx" HorizontalAlignment="Center" Margin="0,45,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Height="21" Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="teamTwoScoreValue" HorizontalAlignment="Center" Margin="0,166,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Height="20" RenderTransformOrigin="2.166,0.515" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="teamTwoScore_textbx" HorizontalAlignment="Center" Margin="0,166,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Height="20" RenderTransformOrigin="2.166,0.515" Grid.Column="1" Grid.Row="3"/>
         <Label x:Name="vsLabel" Content="-vs-" HorizontalAlignment="Left" Margin="88,90,0,0" VerticalAlignment="Top" Height="29" Width="44" RenderTransformOrigin="5.407,2.885" Grid.Column="1" Grid.Row="3"/>
-        <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="220,96,0,0" VerticalAlignment="Top" Height="23" Width="46" RenderTransformOrigin="0.543,0.043" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="220,96,0,0" VerticalAlignment="Top" Height="23" Width="46" RenderTransformOrigin="0.543,0.043" Grid.Column="1" Grid.Row="3" Click="scoreBtn_Click"/>
 
     </Grid>
 
