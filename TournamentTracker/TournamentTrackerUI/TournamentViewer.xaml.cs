@@ -72,35 +72,17 @@ namespace TournamentTrackerUI
         {
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
-                if ((bool)unplayedRoundCheckBx.IsChecked)
+                if (matchups.First().MatchupRound == round)
                 {
-                    if (matchups.First().MatchupRound == round)
+                    selectedMatchups.Clear();
+                    foreach (MatchupModel m in matchups)
                     {
-                        selectedMatchups.Clear();
-                        foreach (MatchupModel m in matchups)
+                        if (m.Winner == null || (bool)!unplayedRoundCheckBx.IsChecked)
                         {
-                            if (m.Winner == null || (bool)unplayedRoundCheckBx.IsChecked)
-                            {
-                                selectedMatchups.Add(m);
-                            }
+                            selectedMatchups.Add(m);
                         }
                     }
                 }
-                else
-                {
-                    if (matchups.First().MatchupRound == round)
-                    {
-                        selectedMatchups.Clear();
-                        foreach (MatchupModel m in matchups)
-                        {
-                            if (m.Winner != null || (bool)!unplayedRoundCheckBx.IsChecked)
-                            {
-                                selectedMatchups.Add(m);
-                            }
-                        }
-                    }
-                }
-                
             }
             if (selectedMatchups.Count > 0)
             {
@@ -119,6 +101,8 @@ namespace TournamentTrackerUI
                     teamTwoLabel.Visibility = Visibility.Visible;
                     teamTwoScoreLabel.Visibility = Visibility.Visible;
                     vsLabel.Visibility = Visibility.Visible;
+                    scoreBtn.Visibility = Visibility.Visible;
+                    teamTwoScore_textbx.Visibility = Visibility.Visible;
                     break;
                 case false:
                     teamOneLabel.Visibility = Visibility.Collapsed;
@@ -127,6 +111,8 @@ namespace TournamentTrackerUI
                     teamTwoLabel.Visibility = Visibility.Collapsed;
                     teamTwoScoreLabel.Visibility = Visibility.Collapsed;
                     vsLabel.Visibility = Visibility.Collapsed;
+                    scoreBtn.Visibility = Visibility.Collapsed;
+                    teamTwoScore_textbx.Visibility = Visibility.Collapsed;
                     break;
             }
         }
