@@ -11,4 +11,17 @@ User can:
 
 ## ScreenShots
 
+### Tournament Dashbard
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+
+### Create Tournament Page
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+
+### Create Team Page
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+
+### Add New Player
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+
+### Tournament Viewer
 ![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
