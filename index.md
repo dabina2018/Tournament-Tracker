@@ -1,6 +1,11 @@
-#High King Meena
-### Daveena Cooper
+# High King Meena
+### An application to track tournament outcomes.
+### User can:
+  # Create Teams
+  # Add new Players
+  # Create Tournaments
+  # save data to either SQL or Text file
 
-[Link](https://www.instagram.com/easyeigo/) and ! [Image](TournamentTracker/TournamentTrackerUI/Resources/podium_icon.ico)
+[Check it out on Azure!](https://www.instagram.com/easyeigo/) 
 
 
