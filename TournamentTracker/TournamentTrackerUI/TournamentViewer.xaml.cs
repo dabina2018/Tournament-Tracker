@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrackerLibrary;
+using TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
 
 namespace TournamentTrackerUI
@@ -229,6 +231,8 @@ namespace TournamentTrackerUI
                     MessageBox.Show("Tie Game! there is no winner");
                 }
                 LoadMatchups((int)roundComboBx.SelectedItem);
+
+                GlobalConfig.Connection.UpdateMatchup(m);
             }
             
         }

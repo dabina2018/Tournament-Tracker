@@ -266,7 +266,7 @@ namespace TrackerLibrary.DataAccess
                 //dbo.sp_Matchups_Update
                 var p = new DynamicParameters();
                 p.Add("@id", model.Id);
-                p.Add("@WinnerId", model.WinnerId);
+                p.Add("@WinnerId", model.Winner.Id);
 
                 connection.Execute("dbo.sp_Matchups_Update", p, commandType: CommandType.StoredProcedure);
                 //dbo.sp_MatchupEntries_Update
@@ -274,7 +274,7 @@ namespace TrackerLibrary.DataAccess
                 {
                     p = new DynamicParameters();
                     p.Add("@id", me.Id);
-                    p.Add("@TeamCompeting", me.TeamCompeting.Id);
+                    p.Add("@TeamCompetingId", me.TeamCompeting.Id);
                     p.Add("@Score", me.Score);
 
                     connection.Execute("dbo.sp_MatchupEntries_Update", p, commandType: CommandType.StoredProcedure);
