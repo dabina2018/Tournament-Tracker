@@ -13,5 +13,6 @@ User can:
 <H4> App is available Monday - Friday from 0800 - 1200 CST</H4>
 
 
-ScreenShots
+## ScreenShots
+
 ![Tournament Dashboard](calc img.jpg)
