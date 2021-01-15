@@ -14,4 +14,4 @@ User can:
 
 
 ScreenShots
-![Drag Racing](Dragster.jpg)
+![Tournament Dashboard](calc img.jpg)
