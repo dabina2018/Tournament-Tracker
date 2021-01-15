@@ -8,4 +8,6 @@
 
 [Check it out on Azure!](https://www.instagram.com/easyeigo/) 
 
+### App is available Monday - Friday from 0800 - 1200 CST
+
 
