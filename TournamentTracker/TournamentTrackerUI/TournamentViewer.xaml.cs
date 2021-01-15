@@ -24,7 +24,7 @@ namespace TournamentTrackerUI
         private TournamentModel tournament;
         BindingList<int> rounds = new BindingList<int>();
         BindingList<MatchupModel> selectedMatchups = new BindingList<MatchupModel>();
-        
+
         public TournamentViewer(TournamentModel tournamentModel)
         {
             InitializeComponent();
@@ -39,27 +39,28 @@ namespace TournamentTrackerUI
             tournamentName_Label.Content = tournament.TournamentName;
         }
         private void InitializeRoundsLists()
-        { 
+        {
             roundComboBx.ItemsSource = rounds;
         }
         private void InitializeMatchupsList()
-        { 
+        {
             matchupListBox.ItemsSource = selectedMatchups;
-            matchupListBox.DisplayMemberPath= "DisplayName";
+            matchupListBox.DisplayMemberPath = "DisplayName";
         }
         private void LoadRounds()
         {
             rounds.Clear();
             rounds.Add(1);
             int currentRound = 1;
-            foreach(List<MatchupModel> matchups in tournament.Rounds)
+            foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
-                if(matchups.First().MatchupRound > currentRound)
+                if (matchups.First().MatchupRound > currentRound)
                 {
                     currentRound = matchups.First().MatchupRound;
                     rounds.Add(currentRound);
                 }
-            }            
+            }
+            roundComboBx.SelectedItem = rounds.First();
             LoadMatchups(1);
         }
 
@@ -67,24 +68,67 @@ namespace TournamentTrackerUI
         {
             LoadMatchups((int)roundComboBx.SelectedItem);
         }
-        private void LoadMatchups( int round)
+        private void LoadMatchups(int round)
         {
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
-                if(matchups.First().MatchupRound == round)
+                if ((bool)unplayedRoundCheckBx.IsChecked)
                 {
-                    selectedMatchups.Clear();
-                    foreach (MatchupModel m in matchups)
+                    if (matchups.First().MatchupRound == round)
                     {
-                        if (m.Winner != null || (bool)!unplayedRoundCheckBx.IsChecked)
+                        selectedMatchups.Clear();
+                        foreach (MatchupModel m in matchups)
                         {
-                            selectedMatchups.Add(m); 
+                            if (m.Winner == null || (bool)unplayedRoundCheckBx.IsChecked)
+                            {
+                                selectedMatchups.Add(m);
+                            }
                         }
                     }
                 }
+                else
+                {
+                    if (matchups.First().MatchupRound == round)
+                    {
+                        selectedMatchups.Clear();
+                        foreach (MatchupModel m in matchups)
+                        {
+                            if (m.Winner != null || (bool)!unplayedRoundCheckBx.IsChecked)
+                            {
+                                selectedMatchups.Add(m);
+                            }
+                        }
+                    }
+                }
+                
             }
-            
-            LoadMatchupScore(selectedMatchups.First());
+            if (selectedMatchups.Count > 0)
+            {
+                LoadMatchupScore(selectedMatchups.First());
+            }
+            DisplayMatchupInfo();
+        }
+        private void DisplayMatchupInfo()
+        {
+            switch (selectedMatchups.Count > 0)
+            {
+                case true:
+                    teamOneLabel.Visibility = Visibility.Visible;
+                    teamOneScoreLabel.Visibility = Visibility.Visible;
+                    teamOneScore_textbx.Visibility = Visibility.Visible;
+                    teamTwoLabel.Visibility = Visibility.Visible;
+                    teamTwoScoreLabel.Visibility = Visibility.Visible;
+                    vsLabel.Visibility = Visibility.Visible;
+                    break;
+                case false:
+                    teamOneLabel.Visibility = Visibility.Collapsed;
+                    teamOneScoreLabel.Visibility = Visibility.Collapsed;
+                    teamOneScore_textbx.Visibility = Visibility.Collapsed;
+                    teamTwoLabel.Visibility = Visibility.Collapsed;
+                    teamTwoScoreLabel.Visibility = Visibility.Collapsed;
+                    vsLabel.Visibility = Visibility.Collapsed;
+                    break;
+            }
         }
         private  void LoadMatchupScore(MatchupModel m )
         {           
@@ -123,68 +167,84 @@ namespace TournamentTrackerUI
         }
         private void matchupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LoadMatchupScore((MatchupModel)matchupListBox.SelectedItem);
+            if(matchupListBox.SelectedIndex != -1)
+            {
+                LoadMatchupScore((MatchupModel)matchupListBox.SelectedItem);
+            }
+            else
+            {
+                return;
+            }
+            
         }
-
         private void unplayedRoundCheckBx_Checked(object sender, RoutedEventArgs e)
         {
+            //InitializeMatchupsList();
             LoadMatchups((int)roundComboBx.SelectedItem);
         }
 
         private void scoreBtn_Click(object sender, RoutedEventArgs e)
         {
-            MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
-            double teamOneScore = 0;
-            double teamTwoScore = 0;
-            for (int i = 0; i < m.Entries.Count; i++)
+            if (matchupListBox.SelectedIndex == -1)
             {
-                if (i == 0)
-                {
-                    if (m.Entries[0].TeamCompeting != null)
-                    {
-                        //teamOneLabel.Content = m.Entries[0].TeamCompeting.TeamName;
-                        //double scoreVal = 0;
-                        bool scoreValid = double.TryParse(teamOneScore_textbx.Text, out teamOneScore);
-                        if (scoreValid)
-                        {
-                            m.Entries[0].Score = teamOneScore; 
-                        }
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter a valid score for team 1; Score must be an integer");
-                        return;
-                    }
-                }
-                if (i == 1)
-                {
-                    ///teamTwoLabel.Content = m.Entries[1].TeamCompeting.TeamName;
-                    bool scoreValid = double.TryParse(teamTwoScore_textbx.Text, out teamTwoScore);
-                    if (scoreValid)
-                    {
-                        m.Entries[1].Score = teamTwoScore;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter a valid score for team 2; Score must be an integer");
-                    }
-                }
-            }
-            if(teamOneScore > teamTwoScore )
-            {
-                //Team one wins
-                m.Winner = m.Entries[0].TeamCompeting;
-            }
-            else if
-            {
-                //Team one wins
-                m.Winner = m.Entries[1].TeamCompeting;
+                MessageBox.Show("Please select a Matchup from the List");
             }
             else
             {
-                MessageBox.Show("Tie Game! there is no winner");
+                MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
+                double teamOneScore = 0;
+                double teamTwoScore = 0;
+                for (int i = 0; i < m.Entries.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        if (m.Entries[0].TeamCompeting != null)
+                        {
+                            bool scoreValid = double.TryParse(teamOneScore_textbx.Text, out teamOneScore);
+                            if (scoreValid)
+                            {
+                                m.Entries[0].Score = teamOneScore;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid score for team 1; Score must be an integer");
+                            return;
+                        }
+                    }
+                    if (i == 1)
+                    {
+
+                        bool scoreValid = double.TryParse(teamTwoScore_textbx.Text, out teamTwoScore);
+                        if (scoreValid)
+                        {
+                            m.Entries[1].Score = teamTwoScore;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid score for team 2; Score must be an integer");
+                        }
+                    }
+                }
+                if (teamOneScore > teamTwoScore)
+                {
+                    //Team one wins
+                    m.Winner = m.Entries[0].TeamCompeting;
+                    MessageBox.Show("Team One is the Winner");
+                }
+                else if (teamOneScore < teamTwoScore)
+                {
+                    //Team one wins
+                    m.Winner = m.Entries[1].TeamCompeting;
+                    MessageBox.Show("Team Two is the Winner");
+                }
+                else
+                {
+                    MessageBox.Show("Tie Game! there is no winner");
+                }
+                LoadMatchups((int)roundComboBx.SelectedItem);
             }
+            
         }
     }
 }
