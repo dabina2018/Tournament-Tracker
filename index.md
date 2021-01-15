@@ -1,9 +1,5 @@
 # An application to track tournament outcomes.
 User can:
-- Create Teams
-- Add new Players
-- Create Tournaments
-- Save data to either SQL or Text file
 * Create Teams
 * Add new Players
 * Create Tournaments
@@ -15,4 +11,4 @@ User can:
 
 ## ScreenShots
 
-![Tournament Dashboard](calc img.jpg)
+![Tournament Dashboard](TournamentTracker/calc img.jpg)
