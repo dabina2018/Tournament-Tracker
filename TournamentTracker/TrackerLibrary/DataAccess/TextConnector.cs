@@ -95,6 +95,12 @@ namespace TrackerLibrary
             return TournamentFile.FullFilePath().LoadFile().ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile);
             
         }
+
+        public void UpdateMatchup(MatchupModel model)
+        {
+            //TODO - add code for score update to text file
+            throw new NotImplementedException();
+        }
     }
 }
 
