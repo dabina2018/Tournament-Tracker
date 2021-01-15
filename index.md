@@ -11,4 +11,4 @@ User can:
 
 ## ScreenShots
 
-![Tournament Dashboard](TournamentTracker/calc img.jpg)
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
