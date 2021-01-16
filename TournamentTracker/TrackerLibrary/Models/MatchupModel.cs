@@ -16,7 +16,6 @@ namespace TrackerLibrary.Models
         public TeamModel Winner { get; set; }
         //which round this match is a part of 
         public int MatchupRound { get; set; }
-
         public string DisplayName 
         { get
             {

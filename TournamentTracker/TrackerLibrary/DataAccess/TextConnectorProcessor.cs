@@ -330,8 +330,75 @@ namespace TrackerLibrary.DataAccess
                 }
             }
         }
-        
 
+        public static void UpdateMatchupToFile(this MatchupModel matchup)
+        {
+            List<MatchupModel> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile().ConvertToMatchupModels();
+            //Find the matchup the matchup in the db and replace it with the new record
+            MatchupModel oldMatchup = new MatchupModel();
+            foreach (MatchupModel m in matchups)
+            {
+                if(m.Id == matchup.Id)
+                {
+                    oldMatchup = m;
+                }
+            }
+            matchups.Remove(oldMatchup);
+            matchups.Add(matchup);
+
+            //loop thru each entry, get Id and save
+            foreach (MatchupEntryModel entry in matchup.Entries)
+            {
+                //save the matchup record
+                entry.UpdateEntryToFile();
+            }
+
+            //save to file
+            List<string> lines = new List<string>();
+
+            //0=id, 1= entries(pipe delimited by id), 2= winner, 3= matchupRound
+            foreach (MatchupModel m in matchups)
+            {
+                string winner = ""; // make this ukn
+                if (m.Winner != null)
+                {
+                    winner = m.Winner.Id.ToString();
+                }
+                lines.Add($"{m.Id},{ConvertMatchupEntryListToString(m.Entries)},{winner},{m.MatchupRound}");
+            }
+            File.WriteAllLines(GlobalConfig.MatchupFile.FullFilePath(), lines);
+        }
+        public static void UpdateEntryToFile(this MatchupEntryModel entry)
+        {
+            List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels();
+            MatchupEntryModel oldEntry = new MatchupEntryModel();
+            foreach (MatchupEntryModel e in entries)
+            {
+                if (e.Id == entry.Id)
+                {
+                    oldEntry = e;
+                }
+            }
+            entries.Remove(oldEntry);
+            entries.Add(entry);
+
+            List<string> lines = new List<string>();
+
+            //Column definitions: 0= id, 1=TeamCompeting, 2=Score, 3=ParentMatchup
+            foreach (MatchupEntryModel me in entries)
+            {
+                string parent = ""; //make this none
+                if (me.ParentMatchup != null) { parent = me.ParentMatchup.Id.ToString(); }
+                string teamCompeting = ""; //make this unk
+                if (me.TeamCompeting != null)
+                {
+                    teamCompeting = me.TeamCompeting.Id.ToString();
+                }
+                lines.Add($"{me.Id}, {teamCompeting},{me.Score},{parent}");
+            }
+            //save to file
+            File.WriteAllLines(GlobalConfig.MatchupEntryFile.FullFilePath(), lines);
+        }
         private static MatchupModel LookupMatchupById(int id)
         {
             List<string> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile();

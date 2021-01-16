@@ -42,6 +42,7 @@ namespace TournamentTrackerUI
         }
         private void InitializeRoundsLists()
         {
+           
             roundComboBx.ItemsSource = rounds;
         }
         private void InitializeMatchupsList()
@@ -219,6 +220,7 @@ namespace TournamentTrackerUI
                     //Team one wins
                     m.Winner = m.Entries[0].TeamCompeting;
                     MessageBox.Show("Team One is the Winner");
+                    
                 }
                 else if (teamOneScore < teamTwoScore)
                 {
@@ -230,6 +232,8 @@ namespace TournamentTrackerUI
                 {
                     MessageBox.Show("Tie Game! there is no winner");
                 }
+                teamOneScore_textbx.Text = "";
+                teamTwoScore_textbx.Text = "";
                 LoadMatchups((int)roundComboBx.SelectedItem);
 
                 GlobalConfig.Connection.UpdateMatchup(m);
