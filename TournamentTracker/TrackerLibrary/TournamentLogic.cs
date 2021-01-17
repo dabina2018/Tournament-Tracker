@@ -58,7 +58,6 @@ namespace TrackerLibrary
                     current.MatchupRound = 1;
                     output.Add(current);
                     current = new MatchupModel();
-
                     if(byes > 0)
                     {
                         byes -= 1;
@@ -72,18 +71,20 @@ namespace TrackerLibrary
             //Math.Pow(2, rounds);
             //int output = 0;
             int totalTeams = 1;
-            for (int i = 1; i < rounds; i++)
+            for (int i = 1; i <= rounds; i++)
             {
                 totalTeams *= 2;
             }
+            //output = totalTeams - numberOfTeams;
             return totalTeams - numberOfTeams;
+            //return output;
         }
         private static int FindNumberofRounds(int teamCount)
         {
             int output = 1;
             int val = 2;
 
-            while (val  < teamCount)
+            while (val < teamCount)
             {
                 output += 1;
                 val *= 2;

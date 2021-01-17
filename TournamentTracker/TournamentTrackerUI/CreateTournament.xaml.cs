@@ -128,8 +128,9 @@ namespace TournamentTrackerUI
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);
             MessageBox.Show("Tournament was successfully created!");
+            
             this.Close();
-            //callingForm
+            
         }
     }
 }

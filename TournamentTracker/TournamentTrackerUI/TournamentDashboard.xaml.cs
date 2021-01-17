@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using TrackerLibrary;
 using TrackerLibrary.Models;
 using TrackerLibrary.DataAccess;
+using System.ComponentModel;
 
 namespace TournamentTrackerUI
 {
@@ -33,18 +34,19 @@ namespace TournamentTrackerUI
             existingTournament_ListBx.ItemsSource = tournaments;
             existingTournament_ListBx.DisplayMemberPath = "TournamentName";
         }
-        private void createTournament_Btn_Click(object sender, RoutedEventArgs e)
+        private void CreateTournament_Btn_Click(object sender, RoutedEventArgs e)
         {
             CreateTournament page = new CreateTournament();            
             page.Show();
-            InitializeTournamentList();
-
+            //InitializeTournamentList();
+            
         }
-        private void loadTournament_Btn_Click(object sender, RoutedEventArgs e)
+        private void LoadTournament_Btn_Click(object sender, RoutedEventArgs e)
         {
             TournamentModel tm = (TournamentModel)existingTournament_ListBx.SelectedItem;
             TournamentViewer page = new TournamentViewer(tm);
             page.Show();
+            
         }
 
     }

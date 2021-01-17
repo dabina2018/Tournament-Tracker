@@ -31,7 +31,6 @@ namespace TrackerLibrary.DataAccess
             }
             return File.ReadAllLines(file).ToList();
         }
-
         public static List<PrizeModel> ConvertToPrizeModels(this List<string> lines)
         {
             List<PrizeModel> output = new List<PrizeModel>();
@@ -92,9 +91,8 @@ namespace TrackerLibrary.DataAccess
         }
         public static List<TournamentModel> ConvertToTournamentModels(this List<string> lines, string teamFileName, string peopleFileName, string prizeFileName)
         {
-            //id, Tournament Name, EntryFee,(id|id|id - teams), (id|id|id - prizes), 
-            //               ( id^id^id|id^id^id|id^id^id - rounds <list of matchups>)
-            // col0 = id, col1 = tournamentName, col2 = entryfee, col3 = enteredTeams, col4 = prizes, col5 = rounds
+            //id, Tournament Name, EntryFee,(id|id|id - teams), (id|id|id - prizes), ( id^id^id|id^id^id|id^id^id - rounds <list of matchups>)
+            // col0=id, 1= tournamentName, col2 = entryfee, col3 = enteredTeams, col4 = prizes, col5 = rounds
             List<TournamentModel> output = new List<TournamentModel>();
             List<TeamModel> teams = teamFileName.FullFilePath().LoadFile().ConvertToTeamModels(peopleFileName);
             List<PrizeModel> prizes = prizeFileName.FullFilePath().LoadFile().ConvertToPrizeModels();
@@ -289,7 +287,7 @@ namespace TrackerLibrary.DataAccess
             File.WriteAllLines(GlobalConfig.MatchupFile.FullFilePath(), lines);
         }
         public static void SaveEntryToFile(this MatchupEntryModel entry, string matchupEntryFile)
-        {
+        {//ERROR HAPPENS HERE!!
             List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels();
             int currentId = 1;
             if (entries.Count > 0) 
@@ -304,14 +302,17 @@ namespace TrackerLibrary.DataAccess
             //Column definitions: 0= id, 1=TeamCompeting, 2=Score, 3=ParentMatchup
             foreach (MatchupEntryModel me in entries)
             {
-                string parent = ""; //make this none
-                if(me.ParentMatchup != null) { parent = me.ParentMatchup.Id.ToString(); }
-                string teamCompeting = ""; //make this unk
+                string parent = "";
+                if(me.ParentMatchup != null) 
+                { 
+                    parent = me.ParentMatchup.Id.ToString(); 
+                }
+                string teamCompeting = "";
                 if(me.TeamCompeting != null)
                 {
                     teamCompeting = me.TeamCompeting.Id.ToString();
                 }
-                lines.Add($"{me.Id}, {teamCompeting},{me.Score},{parent}");
+                lines.Add($"{me.Id},{teamCompeting},{me.Score},{parent}");
             }
             //save to file
             File.WriteAllLines(GlobalConfig.MatchupEntryFile.FullFilePath(), lines);
@@ -321,12 +322,11 @@ namespace TrackerLibrary.DataAccess
             // loop thru each round
             foreach (List<MatchupModel> round in model.Rounds)
             {
-                //loop thru each matchup, get Id, save matchup record and return Id for new matchup
+                //loop thru matchups in ea round, get Id, save matchup record and return Id for new matchup
                 foreach (MatchupModel matchup in round)
                 {
                     //save to file
-                    matchup.SaveMatchupToFile(matchupFile, matchupEntryFile);
-                    
+                    matchup.SaveMatchupToFile(matchupFile, matchupEntryFile);                    
                 }
             }
         }
@@ -388,13 +388,13 @@ namespace TrackerLibrary.DataAccess
             foreach (MatchupEntryModel me in entries)
             {
                 string parent = ""; //make this none
-                if (me.ParentMatchup != null) { parent = me.ParentMatchup.Id.ToString(); }
+                if (me.ParentMatchup != null) { parent = me.ParentMatchup.Id.ToString();}
                 string teamCompeting = ""; //make this unk
                 if (me.TeamCompeting != null)
                 {
                     teamCompeting = me.TeamCompeting.Id.ToString();
                 }
-                lines.Add($"{me.Id}, {teamCompeting},{me.Score},{parent}");
+                lines.Add($"{me.Id},{teamCompeting},{me.Score},{parent}");
             }
             //save to file
             File.WriteAllLines(GlobalConfig.MatchupEntryFile.FullFilePath(), lines);
@@ -461,7 +461,7 @@ namespace TrackerLibrary.DataAccess
             //2|5|
             foreach (PersonModel p in people)
             {
-                output += $"{p.Id} |";
+                output += $"{p.Id}|";
             }
             output = output.Substring(0, output.Length - 1);
             return output;
@@ -472,7 +472,7 @@ namespace TrackerLibrary.DataAccess
             if(teams.Count == 0) return"";//change to none
             foreach (TeamModel tm in teams)
             {
-                output += $"{tm.Id} | ";
+                output += $"{tm.Id}|";
             }
             output = output.Substring(0, output.Length - 1);
             return output;
@@ -526,7 +526,7 @@ namespace TrackerLibrary.DataAccess
             if(entries.Count == 0) { return ""; }
             foreach (MatchupEntryModel e in entries)
             {
-                output += $"{ e.Id }|";
+                output += $"{e.Id}|";
             }
             output = output.Substring(0, output.Length - 1);
             return output;
