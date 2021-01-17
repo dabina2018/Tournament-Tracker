@@ -25,7 +25,7 @@ namespace TrackerLibrary.Models
             PrizePercentage = prizePercentageValue;
         }
 
-        // TO DO -- Figure out why it gives an error with out this here.
+        // TODO -- Figure out why it gives an error with out this here.
         public PrizeModel()
         {
         }

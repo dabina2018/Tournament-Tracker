@@ -22,14 +22,11 @@ namespace TrackerLibrary.DataAccess
             
             if (db  == DatabaseType.Sql)
             {
-                // TODO - Set up SQL Connection
                  SqlConnector sql = new SqlConnector();
                 Connection = sql;
-                
             }
             else if (db == DatabaseType.TextFile)
             {
-                //TODO - Create textfile Connection
                 TextConnector text = new TextConnector();
                 Connection = text;
             }
@@ -37,7 +34,6 @@ namespace TrackerLibrary.DataAccess
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
-
         }
     }
 }

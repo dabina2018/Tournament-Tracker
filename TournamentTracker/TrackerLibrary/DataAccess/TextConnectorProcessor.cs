@@ -245,6 +245,7 @@ namespace TrackerLibrary.DataAccess
         }
         public static void SaveMatchupToFile(this MatchupModel matchup, string matchupFile, string matchupEntryFile) 
         {
+            //0=id, 1= entries(pipe delimited by id), 2= winner, 3= matchupRound
             List<MatchupModel> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile().ConvertToMatchupModels();
             int currentId = 1;
             if(matchups.Count > 0)
@@ -326,6 +327,7 @@ namespace TrackerLibrary.DataAccess
 
         public static void UpdateMatchupToFile(this MatchupModel matchup)
         {
+            //0=id, 1= entries(pipe delimited by id), 2= winner, 3= matchupRound
             List<MatchupModel> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile().ConvertToMatchupModels();
             //Find the matchup the matchup in the db and replace it with the new record
             MatchupModel oldMatchup = new MatchupModel();
@@ -394,6 +396,7 @@ namespace TrackerLibrary.DataAccess
         }
         private static MatchupModel LookupMatchupById(int id)
         {
+            //0=id, 1= entries(pipe delimited by id), 2= winner, 3= matchupRound
             List<string> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile();
             foreach (string matchup in matchups)
             {
@@ -486,6 +489,7 @@ namespace TrackerLibrary.DataAccess
         }        
         private static string ConvertMatchupListToString(List<MatchupModel> matchups)
         {
+            //0=id, 1= entries(pipe delimited by id), 2= winner, 3= matchupRound
             string output = "";
             if (matchups.Count == 0)
             {

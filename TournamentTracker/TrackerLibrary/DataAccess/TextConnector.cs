@@ -9,14 +9,6 @@ namespace TrackerLibrary
 {
     class TextConnector : IDataConnection
     {
-        //TODO - Refactor so constants are not duplicated
-        //private const string PrizesFile = "PrizeModels.csv";
-        //private const string PeopleFile = "PersonModels.csv";
-        //private const string TeamFile = "TeamModel.csv";
-        //private const string TournamentFile = "TournamentModels.csv";
-        //private const string MatchupFile = "MatchupModels.csv";
-        //private const string MatchupEntryFile = "MatchupEntryModels.csv";
-
         public PrizeModel CreatePrize(PrizeModel model)
         {
             // Load the text file // Convert the tex to List<PrizeMOdel>

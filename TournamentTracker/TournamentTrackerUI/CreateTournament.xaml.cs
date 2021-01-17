@@ -15,6 +15,7 @@ using TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
 using TrackerLibrary;
 
+//TODO -- fix XAML so page does not require/allow resizing
 namespace TournamentTrackerUI
 {
     /// <summary>
@@ -123,7 +124,7 @@ namespace TournamentTrackerUI
             tm.EntryFee = fee;
             tm.Prizes = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
-            //TODO wireup matchups
+        
             TournamentLogic.CreateRounds(tm);
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);

@@ -38,7 +38,7 @@ namespace TournamentTrackerUI
         {
             CreateTournament page = new CreateTournament();            
             page.Show();
-            //InitializeTournamentList();
+            // TODO -- refresh list of tournaments after a new tournament is created
             
         }
         private void LoadTournament_Btn_Click(object sender, RoutedEventArgs e)

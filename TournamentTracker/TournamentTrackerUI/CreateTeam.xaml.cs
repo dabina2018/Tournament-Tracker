@@ -14,7 +14,7 @@ namespace TournamentTrackerUI
     /// </summary>
     public partial class CreateTeam : Window
     {
-        //TO DO - Implment as Observable Collection, use NotifyPropertyChanged - https://www.wpf-tutorial.com/data-binding/responding-to-changes/
+        //TODO - Implment as Observable Collection, use NotifyPropertyChanged - https://www.wpf-tutorial.com/data-binding/responding-to-changes/
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All(); //selectTeamMember dropdown
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>(); // teamMember dropdown
         private ITeamRequester callingForm;
@@ -76,7 +76,6 @@ namespace TournamentTrackerUI
         }
         private bool ValidateForm()
         {
-            //TODO - Add validation to the form
             if(firstName_textbx.Text.Length == 0)
             {
                 return false;
@@ -85,13 +84,8 @@ namespace TournamentTrackerUI
             {
                 return false;
             }
-            /*if(cellphone_textbx.Text.Length == 0)
-            {
-                return false;
-            }*/
             return true;
         }
-
         private void addMember_Btn_Click(object sender, RoutedEventArgs e)
         {
             PersonModel p = (PersonModel)selectTeamMember_dropdown.SelectedItem ;
@@ -120,10 +114,7 @@ namespace TournamentTrackerUI
             TeamModel tm = new TeamModel();
             tm.TeamName = teamName_textbx.Text;
             tm.TeamMembers = selectedTeamMembers;
-
             GlobalConfig.Connection.CreateTeam(tm);
-
-            // TODO - Reset and/or Closeout form/page after use
             callingForm.TeamComplete(tm);
             this.Close();
         }
