@@ -36,10 +36,15 @@ namespace TournamentTrackerUI
         }
         private void CreateTournament_Btn_Click(object sender, RoutedEventArgs e)
         {
-            CreateTournament page = new CreateTournament();            
+            CreateTournament page = new CreateTournament(this);            
             page.Show();
             // TODO -- refresh list of tournaments after a new tournament is created
             
+        }
+        public void TournamentComplete(TournamentModel model)
+        {
+            tournaments.Add(model);
+            InitializeTournamentList();
         }
         private void LoadTournament_Btn_Click(object sender, RoutedEventArgs e)
         {

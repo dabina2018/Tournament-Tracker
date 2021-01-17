@@ -36,9 +36,6 @@ namespace TournamentTrackerUI
         }
         private void TeamListFunctionality()
         {
-
-            //selectTeamMember_ListBx.ItemsSource = availableTeamMembers;
-            //selectTeamMember_ListBx.DisplayMemberPath = "FullName";
             selectTeamMember_dropdown.ItemsSource = null;
             selectTeamMember_dropdown.ItemsSource = availableTeamMembers;
             selectTeamMember_dropdown.DisplayMemberPath = "FullName";
@@ -46,7 +43,6 @@ namespace TournamentTrackerUI
             teamMember_ListBx.ItemsSource = null;
             teamMember_ListBx.ItemsSource = selectedTeamMembers;
             teamMember_ListBx.DisplayMemberPath = "FullName";
-            
         }
 
         private void CreateMemberField_Click(object sender, RoutedEventArgs e)
@@ -86,7 +82,7 @@ namespace TournamentTrackerUI
             }
             return true;
         }
-        private void addMember_Btn_Click(object sender, RoutedEventArgs e)
+        private void AddMember_Btn_Click(object sender, RoutedEventArgs e)
         {
             PersonModel p = (PersonModel)selectTeamMember_dropdown.SelectedItem ;
             if (p != null)
@@ -97,7 +93,7 @@ namespace TournamentTrackerUI
             }
         }
 
-        private void removeSelected_Btn_Click(object sender, RoutedEventArgs e)
+        private void RemoveSelected_Btn_Click(object sender, RoutedEventArgs e)
         {
             PersonModel p = (PersonModel)teamMember_ListBx.SelectedItem;
             if (p != null)
@@ -109,7 +105,7 @@ namespace TournamentTrackerUI
             }
         }
 
-        private void createTeam_Btn_Click(object sender, RoutedEventArgs e)
+        private void CreateTeam_Btn_Click(object sender, RoutedEventArgs e)
         {
             TeamModel tm = new TeamModel();
             tm.TeamName = teamName_textbx.Text;

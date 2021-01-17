@@ -26,10 +26,11 @@ namespace TournamentTrackerUI
         List<TeamModel> availableTeams = GlobalConfig.Connection.GetTeam_All();
         List<TeamModel> selectedTeams = new List<TeamModel>();
         List<PrizeModel> selectedPrizes = new List<PrizeModel>();
-        //private ITournamentRequester callingForm;
-        public CreateTournament()
+        private ITournamentRequester callingForm;
+        public CreateTournament(ITournamentRequester caller)
         {
             InitializeComponent();
+            callingForm = caller;
             InitializeLists();
         }
         private void InitializeLists()
@@ -64,8 +65,6 @@ namespace TournamentTrackerUI
             //Call the Create Prize Page
             CreatePrize page = new CreatePrize(this);
             page.Show();
-            //Page returns a PrizeModel
-      
         }
 
         public void PrizeComplete(PrizeModel model)
@@ -129,7 +128,7 @@ namespace TournamentTrackerUI
             //save to db
             GlobalConfig.Connection.CreateTournament(tm);
             MessageBox.Show("Tournament was successfully created!");
-            
+            callingForm.TournamentComplete(tm);
             this.Close();
             
         }
