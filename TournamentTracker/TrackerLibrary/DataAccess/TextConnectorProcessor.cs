@@ -39,7 +39,7 @@ namespace TrackerLibrary.DataAccess
             {
                 string[] columns = line.Split(',');
 
-                PrizeModel p = new PrizeModel();
+                PrizeModel p = new   PrizeModel();
                 p.Id = int.Parse(columns[0]);
                 p.PlaceNumber = int.Parse(columns[1]);
                 p.PlaceName = columns[2];
@@ -91,8 +91,9 @@ namespace TrackerLibrary.DataAccess
         }
         public static List<TournamentModel> ConvertToTournamentModels(this List<string> lines, string teamFileName, string peopleFileName, string prizeFileName)
         {
-            //id, Tournament Name, EntryFee,(id|id|id - teams), (id|id|id - prizes), ( id^id^id|id^id^id|id^id^id - rounds <list of matchups>)
-            // col0=id, 1= tournamentName, col2 = entryfee, col3 = enteredTeams, col4 = prizes, col5 = rounds
+            // 0= id, 1= tournamentName, 2= entryfee, 3= enteredTeams, 4= prizes, 5= rounds
+            //0= id, 1= Tournament Name, 2= EntryFee, 3= (id|id|id - teams), 4= (id|id|id - prizes), 5= ( id^id^id|id^id^id|id^id^id - rounds <list of matchups>)
+
             List<TournamentModel> output = new List<TournamentModel>();
             List<TeamModel> teams = teamFileName.FullFilePath().LoadFile().ConvertToTeamModels(peopleFileName);
             List<PrizeModel> prizes = prizeFileName.FullFilePath().LoadFile().ConvertToPrizeModels();
@@ -148,8 +149,8 @@ namespace TrackerLibrary.DataAccess
                     //==========================================
                     foreach (string matchupModelTextId in msText)
                     {
-                        int matchupId=1;
-                        if(int.TryParse(cols[3], out matchupId))
+                        //int matchupId=1;
+                        if(int.TryParse(matchupModelTextId, out int matchupId))
                         {
                             ms.Add(matchups.Where(x => x.Id == matchupId).First());
                         }

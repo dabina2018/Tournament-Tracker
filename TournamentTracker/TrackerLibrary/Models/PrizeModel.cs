@@ -12,20 +12,32 @@ namespace TrackerLibrary.Models
         public decimal PrizeAmount { get; set; }
         public double PrizePercentage { get; set; }
 
-        public PrizeModel(string placeName, string placeNumber, string prizeAmt, string prizePercentage)
+        /*public PrizeModel(string placeNumber, string placeName, string prizeAmount, string prizePercentage)
         {
             PlaceName = placeName;
 
-            int.TryParse(placeNumber, out int placeNumberValue);
-            PlaceNumber = placeNumberValue;
+            int.TryParse(placeNumber, out int placeNumVal);
+            PlaceNumber = placeNumVal;
 
-            decimal.TryParse(prizeAmt, out decimal prizeAmtValue);
+            decimal.TryParse(prizeAmount, out decimal prizeAmtValue);
             PrizeAmount = prizeAmtValue;
 
             double.TryParse(prizePercentage, out double prizePercentageValue);
             PrizePercentage = prizePercentageValue;
+        }*/
 
-                
+        public PrizeModel(string placeNumber, string placeName, string prizeAmount, string prizePercentage)
+        {
+            PlaceName = placeName;
+
+            int.TryParse(placeNumber, out int placeNumVal);
+            PlaceNumber = placeNumVal;
+
+            decimal.TryParse(prizeAmount, out decimal prizeAmtValue);
+            PrizeAmount = prizeAmtValue;
+
+            double.TryParse(prizePercentage, out double prizePercentageValue);
+            PrizePercentage = prizePercentageValue;
         }
 
         public PrizeModel()

@@ -31,8 +31,7 @@ namespace TournamentTrackerUI
         {
             if (ValidateForm())
             {
-                PrizeModel model = new PrizeModel(
-                    placeName_textbx.Text, placeNumber_textbx.Text, prizeAmt_textbx.Text, prizePercentage_textbx.Text);
+                PrizeModel model = new PrizeModel(placeNumber_textbx.Text, placeName_textbx.Text, prizeAmt_textbx.Text, prizePercentage_textbx.Text);
                 
                 GlobalConfig.Connection.CreatePrize(model);
                 MessageBox.Show("Prize was submitted");
@@ -44,8 +43,7 @@ namespace TournamentTrackerUI
                 prizeAmt_textbx.Text = "0";
                 prizePercentage_textbx.Text = "0";
             }
-            else { MessageBox.Show("This form has invalid information. Please check it and try again."); }
-
+            else { MessageBox.Show("This form has invalid information. Please check it and try again."); }  
         }
         private bool ValidateForm()
         {
@@ -54,12 +52,12 @@ namespace TournamentTrackerUI
             bool placeNumTest = int.TryParse(placeNumber_textbx.Text, out int placeNumber);
             if (!placeNumTest)
             {
-                Console.WriteLine("The place number entered should be a value between 1 and 10");
+                Console.WriteLine("The place number entered should be a whole number value");
                 return false;
             }
             if (placeNumber < 1 || placeNumber_textbx.Text.Length == 0)
             {
-                Console.WriteLine("Please enter a place number value between 1 and 10");
+                Console.WriteLine("The place number entered should be a whole number value");
                 return false;
             }
             if (placeName_textbx.Text.Length == 0)
@@ -73,12 +71,14 @@ namespace TournamentTrackerUI
             bool prizePercentageTest = double.TryParse(prizePercentage_textbx.Text, out prizePercent);
             if (prizeAmtTest == false || prizePercentageTest == false)
             {
-                Console.WriteLine("Prize amount must be a decimal value 0.00");
+                Console.WriteLine("Please enter either a prize amount or a prize percentage");
                 return false;
             }
-            if (prizeAmt <= 0 && prizePercent > 100) return false;
-
-
+            if (prizeAmt < 0 || prizePercent > 100) 
+            {
+                Console.WriteLine("The prize amount should be greater than '0' & The prize percentage should be less than 100");
+                return false;
+            }
             return output;
         }
     }
