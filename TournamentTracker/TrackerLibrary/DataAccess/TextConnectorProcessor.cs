@@ -108,14 +108,6 @@ namespace TrackerLibrary.DataAccess
                 tm.EntryFee = decimal.Parse(cols[2]);
 
                 string[] teamIds = cols[3].Split('|'); //gives "" value
-                //====================
-                //int teamId;
-                //if (int.TryParse(id, out teamId))
-                //{ tm.EnteredTeams.Add(teamId; }
-                //else { me.ParentMatchup = null; }
-
-                //tm.EnteredTeams.Add(teams.Where(x => x.Id == int.TryParse(id), out int x.Id).First());
-                //=================
                 foreach (string id in teamIds)
                 {
                     int teamId;
