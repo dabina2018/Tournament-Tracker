@@ -11,7 +11,7 @@ namespace TrackerLibrary
     {
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            // Load the text file // Convert the tex to List<PrizeMOdel>
+            // Load the text file // Convert the tex to List<PrizeModel>
             List<PrizeModel> prizes = GlobalConfig.PrizesFile.FullFilePath().LoadFile().ConvertToPrizeModels();
 
             // Find the max ID

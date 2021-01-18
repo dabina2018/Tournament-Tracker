@@ -18,11 +18,11 @@
         </Grid.RowDefinitions>
 
         <Label Content="Create Team" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="118"/>
-        <Label Content="Team Name: " HorizontalAlignment="Left" Margin="26,52,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
-        <TextBox x:Name="teamName_textbx" HorizontalAlignment="Left" Margin="135,55,0,0" Text="enter name" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="24" Grid.ColumnSpan="2"/>
+        <Label Content="Team Name: " HorizontalAlignment="Left" Margin="27,52,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
+        <TextBox x:Name="teamName_textbx" HorizontalAlignment="Left" Margin="184,55,0,0" Text="enter name" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="24" Grid.ColumnSpan="2"/>
 
-        <ComboBox x:Name ="selectTeamMember_dropdown" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="199" Height="22" Grid.Column="1"/>
-        <Button x:Name="addMember_Btn" Content="Add Member" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top" Height="26" Width="106" RenderTransformOrigin="0.573,-1.316" Click="AddMember_Btn_Click"/>
+        <ComboBox x:Name ="selectTeamMember_dropdown" HorizontalAlignment="Left" Margin="184,90,0,0" VerticalAlignment="Top" Width="165" Height="22" Grid.ColumnSpan="2"/>
+        <Button x:Name="addMember_Btn" Content="Add Member" HorizontalAlignment="Left" Margin="106,126,0,0" VerticalAlignment="Top" Height="26" Width="106" RenderTransformOrigin="0.573,-1.316" Click="AddMember_Btn_Click"/>
         <GroupBox Header="Create New Member" Margin="10,33,10,285" Grid.Row="1">
             <StackPanel Margin="30,0,18,0" Height="263">
                 <Label Content="First Name" Width="106" HorizontalAlignment="Left"/>
@@ -43,7 +43,7 @@
         <Button x:Name ="removeSelected_Btn" HorizontalAlignment="Left" Margin="394,79,0,0" VerticalAlignment="Top" Height="46" Width="83" Click="RemoveSelected_Btn_Click" Grid.Column="1" Grid.Row="1">
             <TextBlock RenderTransformOrigin="0.735,-1">Remove<LineBreak/>Selected</TextBlock>
         </Button>
-        <TextBlock Margin="36,90,45,0" Text="Select Team Member:" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" FontSize="16" Grid.Column="0"/>
+        <TextBlock Margin="27,84,96,0" Text="Select Team Member:" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" FontSize="16" Grid.Column="0"/>
 
     </Grid>
 </Window>

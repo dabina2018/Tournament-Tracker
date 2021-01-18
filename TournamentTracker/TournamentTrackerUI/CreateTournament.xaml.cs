@@ -55,7 +55,6 @@ namespace TournamentTrackerUI
             {
                 availableTeams.Remove(tm);
                 selectedTeams.Add(tm);
-
                 InitializeLists();
             }
         }

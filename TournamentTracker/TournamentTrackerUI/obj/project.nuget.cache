@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8xACcUm0gMgWV1PEdQBkGlgWtL2/BBhbvIGDxW/1tIfnjn9B7dnAqbxiceLtg6rXxXonjkFX5HVUErYMjSd0hA==",
+  "dgSpecHash": "SKZqne5Q02GyzEjhIyTJsmCzrG7V4qbpu0VMh54uh4L46biLIlcpLjEzJd9Vdoz7y0jC2ofniOmivk2t1E/0Fw==",
   "success": true,
   "projectFilePath": "C:\\Users\\davee\\OneDrive\\Documents\\code\\TournamentTracker\\TournamentTracker\\TournamentTrackerUI\\TournamentTrackerUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\davee\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\davee\\.nuget\\packages\\dynamicdata\\7.1.1\\dynamicdata.7.1.1.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
@@ -15,6 +16,7 @@
     "C:\\Users\\davee\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\davee\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\davee\\.nuget\\packages\\system.security.cryptography.protecteddata\\5.0.0\\system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",

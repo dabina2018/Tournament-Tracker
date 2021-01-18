@@ -4,9 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TournamentTrackerUI"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600"
-      Title="TournamentViewer">
+      mc:Ignorable="d"
+      Title="TournamentViewer" Height="450" Width="500">
 
     <Grid Margin="0,10,0,0">
         <Grid.RowDefinitions>
@@ -21,10 +20,8 @@
             <ColumnDefinition Width="27*"/>
 
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Content="Tournament: " HorizontalAlignment="Left" Width="134" FontSize="20" Margin="5,19,0,86" Grid.RowSpan="3"/>
-        <Label Grid.Row="0" x:Name="tournamentName_Label" Content="&lt;none>" HorizontalAlignment="Left" Margin="144,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.281,0.562" Height="45" Width="248" FontSize="20" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
         <Label Grid.Row="0" x:Name="roundLabel" Content="Round" HorizontalAlignment="Left" Margin="22,80,0,0" VerticalAlignment="Top" Height="30" Width="68" RenderTransformOrigin="0.926,0.65" Grid.RowSpan="3"/>
-        <ListBox x:Name="matchupListBox" SelectionChanged="matchupListBox_SelectionChanged" Margin="32,45,61,28" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
+        <ListBox x:Name="matchupListBox" SelectionChanged="matchupListBox_SelectionChanged" Margin="11,13,3,60" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -35,29 +32,24 @@
             </ListBox.RenderTransform>
 
         </ListBox>
-        <CheckBox Grid.Row="0" x:Name="unplayedRoundCheckBx" Content="Unplayed Only" HorizontalAlignment="Left" Margin="126,113,0,0" VerticalAlignment="Top" Height="27" Width="112" Checked="unplayedRoundCheckBx_Checked" Grid.RowSpan="3">
+        <CheckBox Grid.Row="0" x:Name="unplayedRoundCheckBx" Content="Unplayed Only" HorizontalAlignment="Left" Margin="73,113,0,0" VerticalAlignment="Top" Height="27" Width="160" Checked="unplayedRoundCheckBx_Checked" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <CheckBox.Style>
                 <Style/>
             </CheckBox.Style>
         </CheckBox>
-        <ComboBox x:Name="roundComboBx" HorizontalAlignment="Left" Margin="112,83,0,0" VerticalAlignment="Top" Width="140" Height="24" Grid.Row="0" SelectionChanged="roundComboBx_SelectionChanged" Grid.RowSpan="3"/>
-        <Label Grid.Row="3" Grid.Column="1" x:Name="teamOneLabel" Content="&lt;Team One>" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" Height="29" Width="137"/>
-        <Label Grid.Row="3" Grid.Column="1" x:Name="teamTwoLabel" Content="&lt;Team Two>" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" Height="28" Width="139" />
-        <Label x:Name="teamOneScoreLabel" Content="Score: " HorizontalAlignment="Left" Margin="35,40,0,0" VerticalAlignment="Top" Height="29" Width="59" RenderTransformOrigin="0.294,0.805" Grid.Column="1" Grid.Row="3">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.501"/>
-                    <TranslateTransform X="0.075" Y="0.26"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Label x:Name="teamTwoScoreLabel" Content="Score: " HorizontalAlignment="Left" Margin="35,166,0,0" VerticalAlignment="Top" Height="28" Width="68" RenderTransformOrigin="0.694,0.922" Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="teamOneScore_textbx" HorizontalAlignment="Center" Margin="0,45,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Height="21" Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="teamTwoScore_textbx" HorizontalAlignment="Center" Margin="0,166,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Height="20" RenderTransformOrigin="2.166,0.515" Grid.Column="1" Grid.Row="3"/>
-        <Label x:Name="vsLabel" Content="-vs-" HorizontalAlignment="Left" Margin="88,90,0,0" VerticalAlignment="Top" Height="29" Width="44" RenderTransformOrigin="5.407,2.885" Grid.Column="1" Grid.Row="3"/>
-        <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="254,96,0,0" VerticalAlignment="Top" Height="23" Width="46" RenderTransformOrigin="0.543,0.043" Grid.Column="1" Grid.Row="3" Click="scoreBtn_Click"/>
+        <ComboBox x:Name="roundComboBx" HorizontalAlignment="Left" Margin="105,83,0,0" VerticalAlignment="Top" Width="75" Height="24" Grid.Row="0" SelectionChanged="roundComboBx_SelectionChanged" Grid.RowSpan="3"/>
+        <Label x:Name="vsLabel" Content="-vs-" HorizontalAlignment="Left" Width="64" RenderTransformOrigin="5.407,2.885" Margin="50,107,0,137" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="182,104,0,0" VerticalAlignment="Top" Height="33" Width="61" RenderTransformOrigin="0.543,0.043" Grid.Column="1" Grid.Row="3" Click="scoreBtn_Click"/>
+        <Label Grid.Row="0" Content="Tournament: " FontSize="20" Margin="5,19,90,86" Grid.RowSpan="3"/>
+        <Label Grid.Row="0" x:Name="tournamentName_Label" Content="&lt;none&gt;" HorizontalAlignment="Left" Margin="145,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.281,0.562" Height="39" Width="196" FontSize="20" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+
+        <Label x:Name="teamTwoLabel" Content="&lt;Team Two&gt;" VerticalAlignment="Top" Height="34" HorizontalAlignment="Left" Width="139" Margin="20,14,0,0" Grid.Column="1" Grid.Row="3" />
+        <Label x:Name="teamTwoScoreLabel" Content="Score: " HorizontalAlignment="Left" Margin="20,53,0,0" VerticalAlignment="Top" Height="32" Width="68" RenderTransformOrigin="0.694,0.922" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="teamTwoScore_textbx" Margin="88,60,135,172" Text="0" Grid.Column="1" Grid.Row="3" RenderTransformOrigin="1.188,0.407"/>
+        <Label x:Name="teamOneLabel" Content="&lt;Team One&gt;" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="137" Grid.Column="1" Margin="13,153,0,0" Grid.Row="3"/>
+        <Label x:Name="teamOneScoreLabel" Content="Score: " HorizontalAlignment="Left" Margin="11,188,0,0" VerticalAlignment="Top" Height="31" Width="58" RenderTransformOrigin="0.294,0.805" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="teamOneScore_textbx" Margin="74,195,135,38" Text="0" Grid.Column="1" Grid.Row="3"/>
+
 
     </Grid>
 

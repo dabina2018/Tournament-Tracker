@@ -55,3 +55,6 @@ C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\Tourn
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\bin\Debug\netcoreapp3.1\DynamicData.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\bin\Debug\netcoreapp3.1\System.Reactive.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerUI\bin\Debug\netcoreapp3.1\System.Reactive.xml

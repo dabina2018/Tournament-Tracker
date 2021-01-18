@@ -15,6 +15,8 @@ using TrackerLibrary;
 using TrackerLibrary.Models;
 using TrackerLibrary.DataAccess;
 using System.ComponentModel;
+using DynamicData.Binding;
+using System.Collections.ObjectModel;
 
 namespace TournamentTrackerUI
 {
@@ -24,26 +26,29 @@ namespace TournamentTrackerUI
     public partial class TournamentDashboard : Window, ITournamentRequester
     {
         List<TournamentModel> tournaments = GlobalConfig.Connection.GetTournaments_All();
+        
         public TournamentDashboard()
         {
             InitializeComponent();
             InitializeTournamentList();
+            
         }
         private void InitializeTournamentList()
         {
             existingTournament_ListBx.ItemsSource = tournaments;
             existingTournament_ListBx.DisplayMemberPath = "TournamentName";
+          
         }
         private void CreateTournament_Btn_Click(object sender, RoutedEventArgs e)
         {
             CreateTournament page = new CreateTournament(this);            
             page.Show();
-            // TODO -- refresh list of tournaments after a new tournament is created
+            
             
         }
         public void TournamentComplete(TournamentModel model)
         {
-            tournaments.Add(model);
+            tournaments = GlobalConfig.Connection.GetTournaments_All();
             InitializeTournamentList();
         }
         private void LoadTournament_Btn_Click(object sender, RoutedEventArgs e)

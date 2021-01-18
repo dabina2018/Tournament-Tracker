@@ -26,7 +26,6 @@ namespace TournamentTrackerUI
             InitializeComponent();
             callingForm = caller; //makes caller (prizemodel) available to create prize method
         }
-
         private void CreatePrize_Btn_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateForm())
@@ -52,17 +51,27 @@ namespace TournamentTrackerUI
             bool placeNumTest = int.TryParse(placeNumber_textbx.Text, out int placeNumber);
             if (!placeNumTest)
             {
-                Console.WriteLine("The place number entered should be a whole number value");
+                MessageBox.Show("The place number entered should be a whole number value");
                 return false;
             }
             if (placeNumber < 1 || placeNumber_textbx.Text.Length == 0)
             {
-                Console.WriteLine("The place number entered should be a whole number value");
+                MessageBox.Show("The place number entered should be a whole number value");
                 return false;
             }
             if (placeName_textbx.Text.Length == 0)
             {
-                Console.WriteLine("Please enter a place name, i.e. '1st, 2nd, 3rd'");
+                MessageBox.Show("Please enter a place name, i.e. '1st, 2nd, 3rd'");
+                return false;
+            }
+            if (prizeAmt_textbx.Text.Length == 0 && prizePercentage_textbx.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter either a prize percentage or a prize dollar amount");
+                return false;
+            }
+            if (prizeAmt_textbx.Text == "0" && prizePercentage_textbx.Text == "0")
+            {
+                MessageBox.Show("Enter either a prize percentage or a prize dollar amount, NOT both.");
                 return false;
             }
             decimal prizeAmt;
@@ -71,14 +80,15 @@ namespace TournamentTrackerUI
             bool prizePercentageTest = double.TryParse(prizePercentage_textbx.Text, out prizePercent);
             if (prizeAmtTest == false || prizePercentageTest == false)
             {
-                Console.WriteLine("Please enter either a prize amount or a prize percentage");
+                MessageBox.Show("The prize amount should be a decimal value & The prize percentage should be a whole number");
                 return false;
             }
             if (prizeAmt < 0 || prizePercent > 100) 
             {
-                Console.WriteLine("The prize amount should be greater than '0' & The prize percentage should be less than 100");
+                MessageBox.Show("The prize amount should be greater than '0' & The prize percentage should be less than 100");
                 return false;
             }
+            
             return output;
         }
     }
