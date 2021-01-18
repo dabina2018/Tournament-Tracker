@@ -9,12 +9,13 @@ using TrackerLibrary.DataAccess;
 
 namespace TournamentTrackerUI
 {
+    //TODO -- Fix Form labels, half are green and half are black
     /// <summary>
     /// Interaction logic for CreateTream.xaml
     /// </summary>
     public partial class CreateTeam : Window
     {
-        //TODO - Implment as Observable Collection, use NotifyPropertyChanged - https://www.wpf-tutorial.com/data-binding/responding-to-changes/
+        //TODO - Implement as Observable Collection, use INotifyPropertyChanged - https://www.wpf-tutorial.com/data-binding/responding-to-changes/
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All(); //selectTeamMember dropdown
         private List<PersonModel> selectedTeamMembers = new List<PersonModel>(); // teamMember dropdown
         private ITeamRequester callingForm;

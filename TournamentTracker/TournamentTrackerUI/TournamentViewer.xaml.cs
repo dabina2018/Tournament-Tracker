@@ -168,8 +168,8 @@ namespace TournamentTrackerUI
         }
         private void unplayedRoundCheckBx_Checked(object sender, RoutedEventArgs e)
         {
-            //InitializeMatchupsList();
             LoadMatchups((int)roundComboBx.SelectedItem);
+            //TODO -- refresh matchups list after box is unchecked
         }
 
         private void scoreBtn_Click(object sender, RoutedEventArgs e)
