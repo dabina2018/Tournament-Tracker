@@ -21,7 +21,7 @@ namespace TournamentTrackerUI
     /// <summary>
     /// Interaction logic for TournamentDashboard.xaml
     /// </summary>
-    public partial class TournamentDashboard : Window
+    public partial class TournamentDashboard : Window, ITournamentRequester
     {
         List<TournamentModel> tournaments = GlobalConfig.Connection.GetTournaments_All();
         public TournamentDashboard()

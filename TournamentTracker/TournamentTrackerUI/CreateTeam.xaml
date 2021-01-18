@@ -5,45 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TournamentTrackerUI"
       mc:Ignorable="d"       
-      Title="CreateTeam">
+      Title="CreateTeam" Width="600" Height ="700">
 
-    <Grid HorizontalAlignment="Center" Height="668" Width="768">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="239*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="181"/>
+            <RowDefinition Height="619"/>
+        </Grid.RowDefinitions>
 
-        <Label Content="Create Team" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="119"/>
-        <Label Content="Team Name: " HorizontalAlignment="Left" Margin="32,67,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
-        <TextBox x:Name="teamName_textbx" HorizontalAlignment="Left" Margin="138,70,0,0" Text="enter name" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="24"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,113,0,0" Text="Select Team Member:" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="97" FontSize="16"/>
+        <Label Content="Create Team" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="118"/>
+        <Label Content="Team Name: " HorizontalAlignment="Left" Margin="26,52,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
+        <TextBox x:Name="teamName_textbx" HorizontalAlignment="Left" Margin="135,55,0,0" Text="enter name" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="24" Grid.ColumnSpan="2"/>
+        <TextBlock Margin="26,84,100,0" Text="Select Team Member:" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" FontSize="16" Grid.Column="0"/>
 
-        <ComboBox x:Name ="selectTeamMember_dropdown" HorizontalAlignment="Left" Margin="138,121,0,0" VerticalAlignment="Top" Width="218" Height="22"/>
-        <Button x:Name="addMember_Btn" Content="Add Member" HorizontalAlignment="Left" Margin="176,168,0,0" VerticalAlignment="Top" Height="26" Width="106" RenderTransformOrigin="0.573,-1.316" Click="AddMember_Btn_Click"/>
-        <GroupBox Header="Create New Member" Margin="32,266,449,92">
-            <StackPanel Margin="0,0,13,0">
+        <ComboBox x:Name ="selectTeamMember_dropdown" HorizontalAlignment="Left" Margin="63,110,0,0" VerticalAlignment="Top" Width="218" Height="22"/>
+        <Button x:Name="addMember_Btn" Content="Add Member" HorizontalAlignment="Left" Margin="119,145,0,0" VerticalAlignment="Top" Height="26" Width="106" RenderTransformOrigin="0.573,-1.316" Click="AddMember_Btn_Click"/>
+        <GroupBox Header="Create New Member" Margin="10,33,10,202" Grid.Row="1">
+            <StackPanel Margin="10,0,38,0" Height="295">
                 <Label Content="First Name" Width="106" HorizontalAlignment="Left"/>
-                <TextBox x:Name="firstName_textbx" Text="first" TextWrapping="Wrap" Width="234" HorizontalAlignment="Left"/>
+                <TextBox x:Name="firstName_textbx" Text="first" TextWrapping="Wrap" Width="201" HorizontalAlignment="Left"/>
                 <Label Content="Last Name" Width="104" HorizontalAlignment="Left"/>
-                <TextBox x:Name="lastName_textbx" Text="last" TextWrapping="Wrap" Width="234" HorizontalAlignment="Left"/>
+                <TextBox x:Name="lastName_textbx" Text="last" TextWrapping="Wrap" Width="201" HorizontalAlignment="Left"/>
                 <Label Content="E-mail" Width="104" HorizontalAlignment="Left"/>
-                <TextBox x:Name="email_textbx" Text="you@me.com" TextWrapping="Wrap" Width="234" HorizontalAlignment="Left"/>
+                <TextBox x:Name="email_textbx" Text="you@me.com" TextWrapping="Wrap" Width="201" HorizontalAlignment="Left"/>
                 <Label Content="Cellphone" Width="104" HorizontalAlignment="Left"/>
-                <TextBox x:Name="cellphone_textbx" Text="867-5309" TextWrapping="Wrap" Width="234" HorizontalAlignment="Left"/>
+                <TextBox x:Name="cellphone_textbx" Text="867-5309" TextWrapping="Wrap" Width="201" HorizontalAlignment="Left"/>
                 <Button x:Name="CreateMemberField" Width="100" Margin="10,10,10,10" Click="CreateMemberField_Click">
-                    <TextBlock x:Name="CreateMember_Btn" Text="Create Member:" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="CreateMember_Btn" Text="Create Member:" TextWrapping="Wrap" Height="52" Width="77"/>
                 </Button>
             </StackPanel>
         </GroupBox>
-        <ListBox x:Name="teamMember_ListBx" Margin="384,121,93,92" RenderTransformOrigin="0.5,0.5">
-            <ListBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0"/>
-                </TransformGroup>
-            </ListBox.RenderTransform>
-        </ListBox>
-
-        <Button x:Name="createTeam_Btn" Content="Create Team" HorizontalAlignment="Left" Margin="328,608,0,0" VerticalAlignment="Top" Height="34" Width="146" Click="CreateTeam_Btn_Click"/>
-        <Button x:Name ="removeSelected_Btn" HorizontalAlignment="Left" Margin="680,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.385,-0.514" Height="46" Width="83" Click="RemoveSelected_Btn_Click">
+        <ListBox x:Name="teamMember_ListBx" Margin="42,10,42,386" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="createTeam_Btn" Content="Create Team" HorizontalAlignment="Left" Margin="53,317,0,0" VerticalAlignment="Top" Height="34" Width="146" Click="CreateTeam_Btn_Click" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name ="removeSelected_Btn" HorizontalAlignment="Left" Margin="394,79,0,0" VerticalAlignment="Top" Height="46" Width="83" Click="RemoveSelected_Btn_Click" Grid.Column="1" Grid.Row="1">
             <TextBlock RenderTransformOrigin="0.735,-1">Remove<LineBreak/>Selected</TextBlock>
         </Button>
 

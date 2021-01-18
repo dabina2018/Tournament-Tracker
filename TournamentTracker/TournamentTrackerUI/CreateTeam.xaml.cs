@@ -114,5 +114,7 @@ namespace TournamentTrackerUI
             callingForm.TeamComplete(tm);
             this.Close();
         }
+
+      
     }
 }
