@@ -67,12 +67,13 @@ namespace TournamentTrackerUI
             LoadMatchups(1);
         }
 
-        private void roundComboBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void RoundComboBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LoadMatchups((int)roundComboBx.SelectedItem);
         }
         private void LoadMatchups(int round)
         {
+            //TODO -- Textfile displays all matchups in a tournament instead of by selected round
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
                 if (matchups.First().MatchupRound == round)
@@ -84,8 +85,10 @@ namespace TournamentTrackerUI
                         {
                             selectedMatchups.Add(m);
                         }
+                        
                     }
                 }
+
             }
             if (selectedMatchups.Count > 0)
             {
@@ -154,7 +157,7 @@ namespace TournamentTrackerUI
                 }
             }
         }
-        private void matchupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MatchupListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(matchupListBox.SelectedIndex != -1)
             {
@@ -166,13 +169,13 @@ namespace TournamentTrackerUI
             }
             
         }
-        private void unplayedRoundCheckBx_Checked(object sender, RoutedEventArgs e)
+        private void UnplayedRoundCheckBx_Checked(object sender, RoutedEventArgs e)
         {
             LoadMatchups((int)roundComboBx.SelectedItem);
             //TODO -- refresh matchups list after box is unchecked
         }
 
-        private void scoreBtn_Click(object sender, RoutedEventArgs e)
+        private void ScoreBtn_Click(object sender, RoutedEventArgs e)
         {
             if (matchupListBox.SelectedIndex == -1)
             {

@@ -15,7 +15,7 @@ using TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
 using TrackerLibrary;
 
-//TODO -- fix XAML so page does not require/allow resizing
+
 namespace TournamentTrackerUI
 {
     /// <summary>
@@ -58,7 +58,6 @@ namespace TournamentTrackerUI
                 InitializeLists();
             }
         }
-
         private void CreatePrizeBtn_Click(object sender, RoutedEventArgs e)
         {
             //Call the Create Prize Page

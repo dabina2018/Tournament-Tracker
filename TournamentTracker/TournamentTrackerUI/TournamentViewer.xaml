@@ -21,7 +21,7 @@
 
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" x:Name="roundLabel" Content="Round" HorizontalAlignment="Left" Margin="22,80,0,0" VerticalAlignment="Top" Height="30" Width="68" RenderTransformOrigin="0.926,0.65" Grid.RowSpan="3"/>
-        <ListBox x:Name="matchupListBox" SelectionChanged="matchupListBox_SelectionChanged" Margin="11,13,3,60" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
+        <ListBox x:Name="matchupListBox" SelectionChanged="MatchupListBox_SelectionChanged" Margin="11,13,3,60" Grid.Row="3" RenderTransformOrigin="0.5,0.5">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,14 +32,14 @@
             </ListBox.RenderTransform>
 
         </ListBox>
-        <CheckBox Grid.Row="0" x:Name="unplayedRoundCheckBx" Content="Unplayed Only" HorizontalAlignment="Left" Margin="73,113,0,0" VerticalAlignment="Top" Height="27" Width="160" Checked="unplayedRoundCheckBx_Checked" Grid.RowSpan="3" Grid.ColumnSpan="2">
+        <CheckBox Grid.Row="0" x:Name="unplayedRoundCheckBx" Content="Unplayed Only" HorizontalAlignment="Left" Margin="73,113,0,0" VerticalAlignment="Top" Height="27" Width="160" Checked="UnplayedRoundCheckBx_Checked" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <CheckBox.Style>
                 <Style/>
             </CheckBox.Style>
         </CheckBox>
-        <ComboBox x:Name="roundComboBx" HorizontalAlignment="Left" Margin="105,83,0,0" VerticalAlignment="Top" Width="75" Height="24" Grid.Row="0" SelectionChanged="roundComboBx_SelectionChanged" Grid.RowSpan="3"/>
+        <ComboBox x:Name="roundComboBx" HorizontalAlignment="Left" Margin="105,83,0,0" VerticalAlignment="Top" Width="75" Height="24" Grid.Row="0" SelectionChanged="RoundComboBx_SelectionChanged" Grid.RowSpan="3"/>
         <Label x:Name="vsLabel" Content="-vs-" HorizontalAlignment="Left" Width="64" RenderTransformOrigin="5.407,2.885" Margin="50,107,0,137" Grid.Column="1" Grid.Row="3"/>
-        <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="182,104,0,0" VerticalAlignment="Top" Height="33" Width="61" RenderTransformOrigin="0.543,0.043" Grid.Column="1" Grid.Row="3" Click="scoreBtn_Click"/>
+        <Button x:Name="scoreBtn" Content="Score" HorizontalAlignment="Left" Margin="182,104,0,0" VerticalAlignment="Top" Height="33" Width="61" RenderTransformOrigin="0.543,0.043" Grid.Column="1" Grid.Row="3" Click="ScoreBtn_Click"/>
         <Label Grid.Row="0" Content="Tournament: " FontSize="20" Margin="5,19,90,86" Grid.RowSpan="3"/>
         <Label Grid.Row="0" x:Name="tournamentName_Label" Content="&lt;none&gt;" HorizontalAlignment="Left" Margin="145,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.281,0.562" Height="39" Width="196" FontSize="20" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
 
