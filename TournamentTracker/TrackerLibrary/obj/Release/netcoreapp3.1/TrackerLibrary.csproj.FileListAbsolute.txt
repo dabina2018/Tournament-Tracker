@@ -1,0 +1,9 @@
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\bin\Release\netcoreapp3.1\TrackerLibrary.deps.json
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\bin\Release\netcoreapp3.1\TrackerLibrary.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\bin\Release\netcoreapp3.1\TrackerLibrary.pdb
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Release\netcoreapp3.1\TrackerLibrary.csprojAssemblyReference.cache
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Release\netcoreapp3.1\TrackerLibrary.AssemblyInfoInputs.cache
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Release\netcoreapp3.1\TrackerLibrary.AssemblyInfo.cs
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Release\netcoreapp3.1\TrackerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Release\netcoreapp3.1\TrackerLibrary.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TrackerLibrary\obj\Release\netcoreapp3.1\TrackerLibrary.pdb

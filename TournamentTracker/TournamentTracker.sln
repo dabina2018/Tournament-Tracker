@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackerLibrary", "TrackerLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TournamentTrackerUI", "TournamentTrackerUI\TournamentTrackerUI.csproj", "{308E9B08-EA01-4085-8E92-820A1B724C80}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TournamentTrackerApp", "TournamentTrackerApp\TournamentTrackerApp.csproj", "{DA3CFCAD-4AA5-48C6-81F3-BD9AE4EF90B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{308E9B08-EA01-4085-8E92-820A1B724C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{308E9B08-EA01-4085-8E92-820A1B724C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{308E9B08-EA01-4085-8E92-820A1B724C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA3CFCAD-4AA5-48C6-81F3-BD9AE4EF90B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3CFCAD-4AA5-48C6-81F3-BD9AE4EF90B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA3CFCAD-4AA5-48C6-81F3-BD9AE4EF90B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA3CFCAD-4AA5-48C6-81F3-BD9AE4EF90B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
