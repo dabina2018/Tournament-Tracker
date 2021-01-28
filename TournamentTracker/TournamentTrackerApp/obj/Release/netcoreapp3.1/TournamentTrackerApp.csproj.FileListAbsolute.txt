@@ -67,3 +67,13 @@ C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\Tourn
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\obj\Release\netcoreapp3.1\TournamentTrackerApp.dll
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\obj\Release\netcoreapp3.1\TournamentTrackerApp.pdb
 C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\obj\Release\netcoreapp3.1\TournamentTrackerApp.genruntimeconfig.cache
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\davee\OneDrive\Documents\code\TournamentTracker\TournamentTracker\TournamentTrackerApp\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
