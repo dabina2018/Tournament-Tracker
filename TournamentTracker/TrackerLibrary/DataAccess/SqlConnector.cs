@@ -91,7 +91,7 @@ namespace TrackerLibrary.DataAccess
         }
         private void SaveTournamentPrizes(IDbConnection connection, TournamentModel model)
         {
-            foreach (PrizeModel pz in model.Prizes)
+            foreach (PrizeModel pz in model.Prizes) 
             {
                 var p = new DynamicParameters();
                 p.Add("@TournamentId", model.Id);
@@ -102,7 +102,7 @@ namespace TrackerLibrary.DataAccess
         }
         private void SaveTournamentEntries(IDbConnection connection, TournamentModel model)
         {
-            foreach (TeamModel tm in model.EnteredTeams)
+             foreach (TeamModel tm in model.EnteredTeams)
             {
                 var p = new DynamicParameters();
                 p.Add("@TournamentId", model.Id);
@@ -116,7 +116,7 @@ namespace TrackerLibrary.DataAccess
             //List<List<MatchupModel>>Rounds
             //List<MatchupEntryModel> Entries
 
-            // loop thru the rounds
+            // loop thru the rounds 
             foreach (List<MatchupModel> round in model.Rounds)
             {
                 //loop thru the matchups
@@ -124,7 +124,7 @@ namespace TrackerLibrary.DataAccess
                 {
                     // save the matchup
                     var p = new DynamicParameters();
-                    p.Add("@TournamentId", model.Id);
+                    p.Add("@TournamentId", model.Id);  
                     p.Add("@MatchupRound", matchup.MatchupRound);
                     p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
@@ -134,26 +134,23 @@ namespace TrackerLibrary.DataAccess
                     //loop thru the entries and save
                     foreach (MatchupEntryModel entry in matchup.Entries)
                     {
-                        p = new DynamicParameters();
-                        p.Add("@MatchupId", matchup.Id);
+                        var q = new DynamicParameters();
+                        q.Add("@MatchupId", matchup.Id);
                         //p.Add("@ParentMatchupId", entry.ParentMatchup.Id);
-                        if (entry.ParentMatchup == null) {p.Add("@ParentMatchupId", null);}
-                        else {p.Add("ParentMatchupId", entry.ParentMatchup.Id);}
+                        if (entry.ParentMatchup == null) {q.Add("@ParentMatchupId", null);}
+                        else {q.Add("ParentMatchupId", entry.ParentMatchup.Id);}
 
                         if(entry.TeamCompeting == null) {p.Add("TeamCompetingId", null);}
-                        else {p.Add("TeamCompetingId", entry.TeamCompeting.Id);}
+                        else { q.Add("TeamCompetingId", entry.TeamCompeting.Id);}
                         //p.Add("@TeamCompetingId", entry.TeamCompeting.Id);
                         p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                        connection.Execute("dbo.sp_MatchupEntries_Insert", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo.sp_MatchupEntries_Insert", q, commandType: CommandType.StoredProcedure);
                         
                     }
                 }
 
-            }
-                
-                    
-                   
+            }    
         }
 
         public List<PersonModel> GetPerson_All()

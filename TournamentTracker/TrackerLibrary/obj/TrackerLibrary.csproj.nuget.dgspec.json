@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\davee\\OneDrive\\Documents\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj": {}
+    "D:\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\davee\\OneDrive\\Documents\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj": {
+    "D:\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davee\\OneDrive\\Documents\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj",
+        "projectUniqueName": "D:\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj",
         "projectName": "TrackerLibrary",
-        "projectPath": "C:\\Users\\davee\\OneDrive\\Documents\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj",
-        "packagesPath": "C:\\Users\\davee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davee\\OneDrive\\Documents\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\obj\\",
+        "projectPath": "D:\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\TrackerLibrary.csproj",
+        "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\TournamentTracker\\TournamentTracker\\TrackerLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\davee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,7 +46,7 @@
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0-preview.1.21102.12, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

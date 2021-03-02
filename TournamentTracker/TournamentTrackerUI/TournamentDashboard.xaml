@@ -8,16 +8,16 @@
      
       Title="TournamentDashboard" Height="450" Width="330">
 
-    <Grid Height="350" Width="300" VerticalAlignment="Bottom">
+    <Grid Height="404" Width="300" VerticalAlignment="Top" Margin="15,30,15,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*" />
 
         </Grid.ColumnDefinitions>
-        <Label Content="Tournament Dashboard" HorizontalAlignment="Center" Margin="0,16,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Load Existing Tournament" HorizontalAlignment="Center" Margin="0,74,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="loadTournament_Btn" Content="Load Tournament" HorizontalAlignment="Center" Margin="0,177,0,0" VerticalAlignment="Top" Height="32" Width="140" RenderTransformOrigin="0.55,-0.578" Click="LoadTournament_Btn_Click"/>
-        <Button x:Name="createTournament_Btn" Content="Create Tournament" HorizontalAlignment="Center" Margin="0,232,0,0" VerticalAlignment="Top" Height="47" Width="152" Click="CreateTournament_Btn_Click"/>
-        <ListBox x:Name="existingTournament_ListBx" Margin="74,110,80,206"/>
+        <Label Content="Tournament Dashboard" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,-16,0,0"/>
+        <Label Content="Load Existing Tournament" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="loadTournament_Btn" Content="Load Tournament" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="32" Width="140" RenderTransformOrigin="0.55,-0.578" Click="LoadTournament_Btn_Click"/>
+        <Button x:Name="createTournament_Btn" Content="Create Tournament" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="47" Width="152" Click="CreateTournament_Btn_Click"/>
+        <ListBox x:Name="existingTournament_ListBx" Margin="74,62,80,151"/>
 
     </Grid>
 </Window>
