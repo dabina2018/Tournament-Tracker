@@ -12,16 +12,16 @@ User can:
 ## ScreenShots
 
 ### Tournament Dashbard
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Tournament%20Dashbard.PNGgh-pages/calc%20img.jpg?raw=true)
 
 ### Create Tournament Page
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Create%20Tournament.PNG)
 
 ### Create Team Page
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Create%20Team2.PNG)
 
-### Add New Player
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+### Create Prize
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Create%20Prize.PNG)
 
 ### Tournament Viewer
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/calc%20img.jpg?raw=true)
+![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Tournament%20Viewer.PNG)
