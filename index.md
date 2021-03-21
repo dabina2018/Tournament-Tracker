@@ -13,7 +13,7 @@ User can:
 
 ### Tournament Dashbard
 ## Displays all active tournaments in the .csv/DB
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Tournament%20Dashbard.PNG)
+![Tournament Dashboard](/Tournament%20Dashbard.PNG)
 
 ### Tournament Viewer
 ## Select to view a spcecific Tournaments details
