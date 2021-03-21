@@ -13,7 +13,7 @@ User can:
 
 ### Tournament Dashbard
 ## Displays all active tournaments in the .csv/DB
-![Tournament Dashboard](/Tournament%20Dashbard.PNG)
+![Tournament Dashboard](/Tournament%20Dashbard.png)
 
 ### Tournament Viewer
 ## Select to view a spcecific Tournaments details
