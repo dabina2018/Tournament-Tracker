@@ -9,4 +9,4 @@
   <li>The login used for the SQL connection string only has permissons  to run stored procedures</li>
   </ul>
 
-<a href="https://dabina2018.github.io/TournamentTracker/"> Tournament Tracker </a>
+<a href="https://dabina2018.github.io/Tournament-Tracker/"> Tournament Tracker </a>
