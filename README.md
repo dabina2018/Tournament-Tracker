@@ -4,9 +4,9 @@
 <p> Significant changes from tutorial: </p>
 <ul>
   <li>I used Azure SQL server instead of a local databse</li>
-  <li>I used WPF Pages (xaml) instead of WinForms</li>
+  <li>I used HTML5 innstead of WinForms</li>
   <li>I enabled Azure AD Integrated Authentication</li> 
-  <li>The login used for the SQL connection string only has permissons  to run stored procedures</li>
+  <li>The SQL connection  only has permissons  to run stored procedures</li>
   </ul>
 
 # An application to track tournament outcomes.
@@ -14,14 +14,14 @@ User can:
 * Create Teams
 * Add new Players
 * Create Tournaments
-* Save data to either SQL or Text file
+* Save data to either SQL database, csv or Text file
 
 [Check it out!](https://dabina2018.github.io/Tournament-Tracker/) 
 ## ScreenShots
 
 ### Tournament Dashbard
 ## Displays all active tournaments in the .csv/DB
-![Tournament Dashboard](/Tournament%20Dashbard.PNG)
+![Tournament Dashboard](/Screenshots/Tournament%20Dashbard.PNG)
 
 ### Tournament Viewer
 ## Select to view a spcecific Tournaments details
