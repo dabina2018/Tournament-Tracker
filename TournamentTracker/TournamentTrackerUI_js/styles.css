@@ -29,3 +29,21 @@ body{
     transition: 0.5s;
     overflow: hidden;
 }
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: realtive;
+    width: 200%;
+    list-style: none;
+}
+navigation ul li:hover{
+    background: var(--white);
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
