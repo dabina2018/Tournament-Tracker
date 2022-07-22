@@ -87,7 +87,7 @@ body{
 }
 
 /*curve outside*/
-.navigaiton ul li:hover a::after,
+.navigaiton ul li:hover a::before,
 .navigaiton ul li.hovered a::before{
     content: '';
     position: absolute;
