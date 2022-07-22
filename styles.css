@@ -42,7 +42,8 @@ body{
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
-navigation ul li:hover{
+.navigation ul li:hover,
+.navigation ul li.hovered{
     background: var(--white);
 }
 .navigation ul li:nth-child(1){
