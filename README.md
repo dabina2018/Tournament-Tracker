@@ -4,7 +4,7 @@
 <p> Significant changes from tutorial: </p>
 <ul>
   <li>I used Azure SQL server instead of a local databse</li>
-  <li>I used HTML5 innstead of WinForms</li>
+  <li>I used HTML5 instead of WinForms</li>
   <li>I enabled Azure AD Integrated Authentication</li> 
   <li>The SQL connection  only has permissons  to run stored procedures</li>
   </ul>
