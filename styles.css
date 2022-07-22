@@ -57,7 +57,8 @@ navigation ul li:hover{
     text-decoration: none;
     color: var(--white);
 }
-.navigation ul li:hover a{
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
     color:var(--blue);
 }
 .navigation ul li a .icon{
@@ -82,8 +83,8 @@ navigation ul li:hover{
 }
 
 /*curve outside*/
-
-.navigaiton ul li a::before{
+.navigaiton ul li:hover a::after,
+.navigaiton ul li.hovered a::before{
     content: '';
     position: absolute;
     right: 0;
@@ -95,7 +96,8 @@ navigation ul li:hover{
     box-shadow: 35px 35px 0 10px var(--white);
     pointer-events: none;
 }
-.navigaiton ul li a::after{
+.navigaiton ul li:hover a::after,
+.navigaiton ul li.hovered a::after{
     content: '';
     position: absolute;
     right: 0;
