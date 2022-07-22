@@ -25,23 +25,23 @@ User can:
 
 ### Tournament Viewer
 ## Select to view a spcecific Tournaments details
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Tournament%20Viewer.PNG)
+![Tournament Viewer](/Screenshots/Tournament%20Viewer.PNG)
 
 ### Create Tournament Page
 ## Navigate here to create a new tournament
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Create%20Tournament.PNG)
+![Tournament Dashboard](/Screenshots/Create%20Tournament.PNG)
 
 ### Create Team Page
 ## create a new team, create/add players
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Create%20Team2.PNG)
+![Tournament Dashboard](/Screenshots/Create%20Team2.PNG)
 
 ### Create Prize
 ## Add prizes to your tournament
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/Create%20Prize.PNG)
+![Tournament Dashboard](Screenshots/Create%20Prize.PNG)
 
 ### Completed Tournament Form
 ## It will look like this once all the fields have been completed
-![Tournament Dashboard](https://github.com/dabina2018/TournamentTracker/blob/gh-pages/complted%20Tournament.PNG)
+![Tournament Dashboard](Screenshots/completed%20Tournament.PNG)
 
 
 
