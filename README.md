@@ -43,5 +43,3 @@ User can:
 ## It will look like this once all the fields have been completed
 ![Tournament Dashboard](Screenshots/completed%20Tournament.PNG)
 
-
-
