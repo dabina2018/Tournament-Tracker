@@ -47,3 +47,10 @@ navigation ul li:hover{
     margin-bottom: 40px;
     pointer-events: none;
 }
+.navigation ul li a{
+    position: block;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
