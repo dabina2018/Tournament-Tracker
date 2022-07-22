@@ -73,8 +73,18 @@
                         <img src="/Tournament-Tracker/images/user.jpg">
                     </div>
                 </div>
-            </div>
+                <!-- Cards-->
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1,504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
+        
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -92,7 +102,7 @@
             let list = document.querySelectorAll('.navigation li');
             function activeLink(){
                 list.forEach((item) => 
-                item.classList.remove(''));
+                item.classList.remove('hovered'));
                 this.classList.add('hovered');
             }
             list.forEach((item) =>
