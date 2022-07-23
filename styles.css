@@ -95,7 +95,7 @@ body{
     top: -50px;
     width: 30px;
     height: 30px;
-    background: red;
+    background: white;
     border-radius: 50%;
     box-shadow: 35px 35px 0 10px var(--white);
     pointer-events: none;
