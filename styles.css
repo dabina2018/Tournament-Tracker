@@ -175,6 +175,7 @@ body{
     border-radius: 80%;
     overflow: hidden;
     cursor: pointer;
+    border-right: 10px solid;
 }
 .user img{
     position: absolute;
@@ -183,5 +184,5 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 10px solid;
+    
 }
