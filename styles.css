@@ -173,6 +173,7 @@ body{
     min-width: 40px;
     height: 40px;
     border-radius: 80%;
+    background: white;
     overflow: hidden;
     cursor: pointer;
     border-right: 30px solid;
@@ -222,12 +223,8 @@ body{
 .cardBox .card:hover{
     background: var(--blue);
 }
-.cardBox .card:hover .numbers{
-
-}
-.cardBox .card:hover .cardName{
-    
-}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
 .cardBox .card:hover .iconBx{
-    
+    color: var(--white);    
 }
