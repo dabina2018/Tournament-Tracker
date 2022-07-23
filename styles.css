@@ -87,8 +87,8 @@ body{
 }
 
 /*curve outside*/
-.navigaiton ul li:hover a::before,
-.navigaiton ul li.hovered a::before{
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
     content: '';
     position: absolute;
     right: 0;
@@ -100,8 +100,8 @@ body{
     box-shadow: 35px 35px 0 10px var(--black);
     pointer-events: none;
 }
-.navigaiton ul li:hover a::after,
-.navigaiton ul li.hovered a::after{
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
     content: '';
     position: absolute;
     right: 0;
