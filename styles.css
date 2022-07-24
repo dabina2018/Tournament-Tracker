@@ -266,7 +266,7 @@ body{
     border-collapse: collapse;
     margin-top: 10px;
 }
-.details table thread td {
+.details table thead td {
     font-weight: 600;
 }
 .details .recentOrders table tr{
