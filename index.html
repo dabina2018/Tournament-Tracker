@@ -5,8 +5,9 @@
         <link rel ="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <div class="container">
-            <div class="navigation">
+       <!-- Navigation Container -->
+       <div class="container">
+          <div class="navigation">
                 <ul>
                     <li>
                         <a href="#">
@@ -58,103 +59,105 @@
                    </li>                   
                 </ul>
             </div>
-           
-            <!-- main -->
-            <div class="main">
-                <div class="topbar">
-                    <div class="toggle"><ion-icon name="menu-outline"></ion-icon>
+       </div>
+       <!-- End Navigation Container -->
+       <!-- main -->
+       <div class="main">
+            <!-- topbar -->
+            <div class="topbar">
+                <div class="toggle"><ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- Search -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- userImg -->
+                <div class ="user">
+                    <img src="/Tournament-Tracker/images/user.jpg">
+                </div>
+            </div>   
+            <!-- End topbar -->
+            <!-- Cards-->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,506</div>
+                        <div class="cardName">Daily Views</div>
                     </div>
-                    <!-- Search -->
-                    <div class="search">
-                        <label>
-                            <input type="text" placeholder="Search here">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </label>
-                    </div>
-                    <!-- userImg -->
-                    <div class ="user">
-                        <img src="/Tournament-Tracker/images/user.jpg">
-                    </div>
-                </div>       
-
-                <!-- Cards-->
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">1,506</div>
-                            <div class="cardName">Daily Views</div>
-                        </div>
-                        <div class="iconBx"><ion-icon name="eye-outline"></ion-icon>
-                        </div>
+                    <div class="iconBx"><ion-icon name="eye-outline"></ion-icon>
                     </div>
                 </div>
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">80</div>
-                            <div class="cardName">Sales</div>
-                        </div>
-                        <div class="iconBx"><ion-icon name="cart-outline"></ion-icon></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">284</div>
-                            <div class="cardName">Comments</div>
-                        </div>
-                        <div class="iconBx"><ion-icon name="chatbubbles-outline"></ion-icon></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="cardBox">
-                    <div class="card">
-                        <div>
-                            <div class="numbers">$7,842</div>
-                            <div class="cardName">Earnings</div>
-                        </div>
-                        <div class="iconBx"><ion-icon name="cash-outline"></ion-icon></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Cards -->
-                
-                <!-- order data list -->
-                <div class="details">
-                    <div  class = "recentOrders">
-                        <div class="cardHeader">
-                            <h2>Recent Orders</h2>
-                            <a href="#" class="btn">View All</a>
-                        </div>
-                        <table>
-                            <thread>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Price</td>
-                                    <td>Pay</td>
-                                    <td>Status</td>
-                                </tr>
-                            </thread>
-                            <tbody>
-                                <tr>
-                                    <td>Star Refrigerator</td>
-                                    <td>$1200</td>
-                                    <td>Paid</td>
-                                    <td><span class="status delivered">Delivered</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- End data list -->
             </div>
-            <!-- End Main -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Sales</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="cart-outline"></ion-icon></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comments</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="chatbubbles-outline"></ion-icon></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Earnings</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="cash-outline"></ion-icon></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- End Cards -->
+            <!-- order data list -->
+            <div class="details">
+                <div  class = "recentOrders">
+                    <div class="cardHeader">
+                        <h2>Recent Orders</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <thread>
+                            <tr>
+                                <td>Name</td>
+                                <td>Price</td>
+                                <td>Pay</td>
+                                <td>Status</td>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            <tr>
+                                <td>Star Refrigerator</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>   
+                </div>
+            </div>
+            <!-- End data list -->
+           
+            
+        
+                
         </div>
-
+        <!-- End Main -->       
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
         <script>
             //MenuToggle
             let toggle = document.querySelector('.toggle');
