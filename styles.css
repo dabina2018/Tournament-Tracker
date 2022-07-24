@@ -342,5 +342,12 @@ body{
 .recentCustomers .imgBx img {
     position: absolute;
     top: 0;
-    
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.recentCustomers table tr:hover {
+    background: var(--blue);
+    color: var(--white);
 }
