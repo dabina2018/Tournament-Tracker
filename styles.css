@@ -233,7 +233,7 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 .details .recentOrders {
     position: relative;
@@ -245,5 +245,22 @@ body{
     border-radius: 20px;
 }
 .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+.details .table {
     
 }
