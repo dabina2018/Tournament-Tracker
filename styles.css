@@ -162,7 +162,7 @@ body{
     outline: none;
     border: 1px solid var(--black2);
 }
-.search label ion-icon{
+.search ion-icon{
     position:absolute;
     top: 0;
     left: 10px;
