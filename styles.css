@@ -262,5 +262,10 @@ body{
     border-radius: 6px;
 }
 .details .table {
-    
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.details table thread td {
+    font-weight: 600;
 }
