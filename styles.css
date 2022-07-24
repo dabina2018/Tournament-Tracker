@@ -23,6 +23,7 @@ body{
 .navigation{
     position: fixed;
     width: 300px;
+    left: -250px;
     height: 100%;
     background: var(--blue);
     border-Left: 10px solid var(--blue);
@@ -113,12 +114,11 @@ body{
     box-shadow: 35px -35px 0 10px var(--white);
     pointer-events: none;
 }
-
 /* main */
 .main{
     position: absolute;
-    width: calc(100% - 300px);
-    Left: 300px;
+    width: 100%;
+    Left: 0;
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
@@ -372,3 +372,19 @@ body{
 }
 
 /* responsive design */
+@media (max-width: 991px){
+    .navigation{
+        Left: -300px;
+    }
+    .navigation.active{
+        width: 300px;
+        Left: 0;
+    }
+    .main {
+       width: 100%;
+       left: 0;
+    }
+    .main.active{
+        Left:300px;
+    }
+}
