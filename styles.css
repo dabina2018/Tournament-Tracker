@@ -30,7 +30,7 @@ body{
     overflow: hidden;
 }
 .navigation.active{
-    width: 80px;
+    width: 60px;
 }
 .navigation ul{
     position: absolute;
@@ -386,4 +386,17 @@ body{
     .main.active{
         Left:300px;
     }
+    .cardBox {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
+@media (max-width: 768px){
+    .details {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .recentOrders {
+        overflow:-x: auto;
+    }
+    .status.inprogress {
+        white-space: nowrap;
+    }
