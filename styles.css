@@ -163,8 +163,8 @@ body{
     border: 1px solid var(--black2);
 }
 .search ion-icon{
-    position:absolute;
-    top: 0;
+    position: absolute;
+    top: 25%;
     left: 10px;
     font-size: 1.2em;
 }
