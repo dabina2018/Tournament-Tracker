@@ -70,7 +70,7 @@ body{
     display: block;
     min-width: 60px;
     height: 60px;
-    line-height: 70px;
+    line-height: 50px; /* 56 */
     text-align: center;
 }
 .navigation ul li a .icon ion-icon{
@@ -81,7 +81,7 @@ body{
     display: block;
     padding: 0 10px;
     height: 60px;
-    line-height: 40px;
+    line-height: 40px; /* 56*/
     text-align: start;
     white-space: nowrap;
 }
