@@ -12,12 +12,12 @@
     display: grid;
     min-height: 500px;
     background: var(--white);
-    padding: 20px;
+    padding: 5px;
     box-shadow: 0 7px 25px rgba(0,0,0,0.8);
     border-radius: 20px;
 }
-.tournament .currentTournament .tournamentHeader {
-    padding: 10px;
+.tournament .currentTournament h2 {
+    height: fit-content;
 }
 
 /* The container must be positioned relative: */
