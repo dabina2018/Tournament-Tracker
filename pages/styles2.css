@@ -16,7 +16,7 @@
     box-shadow: 0 7px 25px rgba(0,0,0,0.8);
     border-radius: 20px;
 }
-.tournament .currentTournament h2 {
+.tournament .currentTournament .tournamentHeader {
     height: fit-content;
 }
 
