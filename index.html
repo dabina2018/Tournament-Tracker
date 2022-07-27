@@ -248,7 +248,7 @@
             getData();
 
             async function getData() {              
-              const response = await fetch('TournamentModels.csv');
+              const response = await fetch('/Tournament-Tracker/dataFiles/TournamentModels.csv');
               const data = await response.text();
               console.log(data);      
               
