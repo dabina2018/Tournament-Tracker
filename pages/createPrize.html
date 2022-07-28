@@ -11,6 +11,9 @@
 
         <script>
             const revenueData = [];
+            const costData = [];
+            const profitData = [];
+
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
                 Papa.parse(document.getElementById('uploadfile').files[0], {
                      download: true,
@@ -23,7 +26,7 @@
                             revenueData.push(results.data[i].revenue);
                         }
                         console.log(revenueData);
-                     }
+                    }
                 });
             })
         </script>
