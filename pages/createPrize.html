@@ -10,9 +10,9 @@
         <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
 
         <script>
-            const revenue = [];
+            const revenueData = [];
             const costData = [];
-            const profit = [];
+            const profitData = [];
 
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
                 Papa.parse(document.getElementById('uploadfile').files[0], {
@@ -23,9 +23,13 @@
                         //console.log(results);
                         //console.log(results.data[0].revenue);
                         for (i = 0; i < results.data.length; i++) {
-                            revenue.push(results.data[i].revenue);
+                            revenueData.push(results.data[i].revenue);
+                            costData.push(results.data[i].revenue);
+                            profitData.push(results.data[i].revenue);
                         }
-                        console.log(revenue);
+                        console.log(revenueData);
+                        console.log(costData);
+                        console.log(profitData);
                     }
                 });
             })
