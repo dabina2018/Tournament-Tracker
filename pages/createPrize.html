@@ -11,7 +11,7 @@
 
         <script>
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
-                papa.parse(document.getElementById('uploadfile').files[0], {
+                Papa.parse(document.getElementById('uploadfile').files[0], {
                      download: true,
                      header: true, 
                      skipEmptyLines: true,
