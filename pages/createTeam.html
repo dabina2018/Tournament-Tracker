@@ -1,1 +1,61 @@
-createTeam
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tournament Tracker | High King Meena</title>
+        <link rel ="stylesheet" type="text/css" href="/Tournament-Tracker/pages/styles.css"> 
+    </head>
+    <body>
+        <!-- order data list -->
+        <div  class = "recentOrders">
+            <div class="cardHeader">
+                <h2>Tournaments</h2>
+                <a href="#" class="btn">View All</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tournament Name</td>
+                        <td>Prize</td>
+                        <td>Team 1</td>
+                        <td>Team 2</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody id="tableData"></tbody>
+            </table>   
+        </div>
+
+        <!-- Load Table Data --> 
+        <script type="text/template" id="tbl_content_tmpl">
+        <tr>
+            <td><%= tournamentName %></td>
+            <!-- TO DO <td><%= prize %></td> -->
+            <!-- TO DO <td><%= prize %></td> -->
+        </tr>
+        </script>
+
+        <script>
+            // Data from: /dataFiles/TournamentModels.csv           
+            getData();
+
+            async function getData() {              
+            const response = await fetch('/Tournament-Tracker/dataFiles/TournamentModels.csv');
+            const csvData = await response.text();
+
+            const tableBody = document.getElementById('tableData');
+            //let dataHtml = '';
+
+            for(let data of csvData) {
+                dataHtml += '<tr><td></td></tr>';
+
+            }
+
+            console.log(data);  
+            }
+        </script> 
+        <!-- Load Table Data -->
+
+    </body>
+</html>
+
