@@ -56,17 +56,17 @@
                 });
             })
 
+            loadTableData(personData);
             function loadTableData(results) {
-                const tableBody = document.getElementById(results);
+                const tableBody = document.getElementById('tableBody');
                 let dataHtml = '';
 
-                for(let data of tableData) {
-
+                for(let data of results) {
+                    dataHtml += `<tr><td>${person.name}</td></tr>${person.age}</td></tr>`;
                 }
+                console.log(dataHtml)
             }
-        </script>
-
-        
+        </script>     
 
     </body>
 </html>
