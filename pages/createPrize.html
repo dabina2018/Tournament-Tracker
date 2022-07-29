@@ -9,37 +9,31 @@
             border: 1px solid #cccccc;
             padding: 10px;
         }
-
     </style>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Convert CSV to JSON Practice</title> 
-         
+        <title>Convert CSV to JSON </title> 
     </head>
     <body>
-        
         <input type="file" id="uploadfile" accept=".csv">
         <button id="uploadBtn">Upload</button>
         <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
-
-        <div class="details">
-            <table>
-                <thead>
-                    <tr>
-                        <td>Name</td>
-                        <td>Age</td>
-                    </tr>
-                </thead>
-                 <tbody id="results"></tbody>
-            </table>
-        </div>
-
+        
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                </tr>
+            </thead>
+                <tbody id="tableBody"></tbody>
+        </table>
 
         <script>
-            const revenueData = [];
+            /*const revenueData = [];
             const costData = [];
             const profitData = [];
-
+            */
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
                 Papa.parse(document.getElementById('uploadfile').files[0], {
                      download: true,
@@ -48,22 +42,22 @@
                      complete: function(results){
                         console.log(results);
                         //console.log(results.data[0].revenue);
-                        
+                        /*
                         for (i = 0; i < results.data.length; i++) {
                             revenueData.push(results.data[i].revenue);
                             costData.push(results.data[i].cost);
                             profitData.push(results.data[i].profit);
-                        }
-                        //console.log(revenueData);
-                        //console.log(costData);
-                        //console.log(profitData);
-                        
+                        }                        
+                        console.log(revenueData);
+                        console.log(costData);
+                        console.log(profitData);
+                        */
                     }
                 });
             })
 
-            function loadTableData(data) {
-                const tableBody = document.getElementById(data);
+            function loadTableData(results) {
+                const tableBody = document.getElementById(results);
                 let dataHtml = '';
 
                 for(let data of tableData) {
