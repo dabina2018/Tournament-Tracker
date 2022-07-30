@@ -34,7 +34,7 @@
 
             //loadTableData(data);
             async function getData() {              
-            const response = await fetch('/Tournament-Tracker/dataFiles/TournamentModels.csv');
+            const response = await fetch('/Tournament-Tracker/dataFiles/js_csv_practice.csv');
             const data = await response.text();
             const tableBody = document.getElementById('tableData');
             let dataHtml = '';
