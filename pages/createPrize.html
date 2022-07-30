@@ -36,7 +36,7 @@
             async function getData() {              
             const response = await fetch('/Tournament-Tracker/dataFiles/js_csv_practice.csv');
             const data = await response.text();
-            const tableBody = document.getElementById('tableData');
+            const tableBody = document.getElementById('tableBody');
             let dataHtml = '';
             /*
             for(let entry of data) {
@@ -50,6 +50,9 @@
                 }
                 console.log(dataHtml)
                 tableBody.innerHTML = dataHtml;  
+            }
+            function loadTableData(data) {
+                
             }
             /*
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
