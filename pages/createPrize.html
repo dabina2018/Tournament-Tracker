@@ -14,26 +14,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Convert CSV to JSON </title> 
     </head>
-    <body>
-        <input type="file" id="uploadfile" accept=".csv">
-        <button id="uploadBtn">Upload</button>
-        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
-        
+    <body>  
         <table>
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Revenue</td>
-                    <td>Profit</td>
-                    <td>Cost</td>
+                    <td>zero</td>
+                    <td>one</td>
+                    <td>two</td>
+                    <td>three</td>
                 </tr>
             </thead>
                 <tbody id="tableBody"></tbody>
         </table>
+        
 
         <script>
-            loadTableData(results);
-            
+        // Data from: /dataFiles/TournamentModels.csv           
+            getData();
+            loadTableData(data);
+
+            async function getData() {              
+            const response = await fetch('/Tournament-Tracker/dataFiles/TournamentModels.csv');
+            const csvData = await response.text();
+            const tableBody = document.getElementById('tableData');
+            let dataHtml = '';
+
+            for(let entry of csvData) {
+                dataHtml += '<tr><td></td></tr>';
+            }
+            for(let entry of data) {
+                    dataHtml += `<tr><td>${data.one}</td><td>${data.two}</td>
+                        <td>${data.three}</td><td>${data.four}</td><td>${data.five}</td>
+                        <td>${data.six}</td><td>${data.seven}</td></tr>`;
+                }
+                console.log(dataHtml)
+                tableBody.innerHTML = dataHtml;  
+            }
+            /*
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
                 Papa.parse(document.getElementById('uploadfile').files[0], {
                      download: true,
@@ -54,9 +71,9 @@
                     }
                 });
             })
+            */
             
-            
-            function loadTableData(results) {
+            function loadTableData(data) {
                 const tableBody = document.getElementById('tableBody');
                 let dataHtml = '';
 
