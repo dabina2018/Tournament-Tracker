@@ -22,22 +22,18 @@
         <table>
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Age</td>
+                    <td>ID</td>
+                    <td>Revenue</td>
+                    <td>Profit</td>
+                    <td>Cost</td>
                 </tr>
             </thead>
                 <tbody id="tableBody"></tbody>
         </table>
 
         <script>
-            window.onload = () => {
-                loadTableData(results);
-
-            };
-            /*const revenueData = [];
-            const costData = [];
-            const profitData = [];
-            */
+            loadTableData(results);
+            
             const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
                 Papa.parse(document.getElementById('uploadfile').files[0], {
                      download: true,
@@ -45,8 +41,8 @@
                      skipEmptyLines: true,
                      complete: function(results){
                         console.log(results);
-                        //console.log(results.data[0].revenue);
-                        /*
+                        console.log(results.data[0].revenue);
+                        
                         for (i = 0; i < results.data.length; i++) {
                             revenueData.push(results.data[i].revenue);
                             costData.push(results.data[i].cost);
@@ -54,12 +50,11 @@
                         }                        
                         console.log(revenueData);
                         console.log(costData);
-                        console.log(profitData);
-                        */
+                        console.log(profitData);                        
                     }
                 });
             })
-
+            
             
             function loadTableData(results) {
                 const tableBody = document.getElementById('tableBody');
