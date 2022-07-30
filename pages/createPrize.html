@@ -66,9 +66,11 @@
                 let dataHtml = '';
 
                 for(let data of results) {
-                    dataHtml += `<tr><td>${person.name}</td></tr>${person.age}</td></tr>`;
+                    dataHtml += `<tr><td>${data.id}</td><td>${data.revenue}</td>
+                        <td>${data.profit}</td><td>${data.cost}</td></tr>`;
                 }
                 console.log(dataHtml)
+                tableBody.innerHTML = dataHtml;
             }
         </script>     
 
