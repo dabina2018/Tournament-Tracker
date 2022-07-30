@@ -31,21 +31,22 @@
         <script>
         // Data from: /dataFiles/TournamentModels.csv           
             getData();
-            //loadTableData(data);
 
+            //loadTableData(data);
             async function getData() {              
             const response = await fetch('/Tournament-Tracker/dataFiles/TournamentModels.csv');
             const data = await response.text();
             const tableBody = document.getElementById('tableData');
             let dataHtml = '';
-
+            /*
             for(let entry of data) {
                 dataHtml += '<tr><td></td></tr>';
             }
+            */
             for(let entry of data) {
-                    dataHtml += `<tr><td>${data.one}</td><td>${data.two}</td>
-                        <td>${data.three}</td><td>${data.four}</td><td>${data.five}</td>
-                        <td>${data.six}</td><td>${data.seven}</td></tr>`;
+                    dataHtml += `<tr><td>${entry.one}</td><td>${entry.two}</td>
+                        <td>${entry.three}</td><td>${entry.four}</td><td>${entry.five}</td>
+                        <td>${entry.six}</td><td>${entry.seven}</td></tr>`;
                 }
                 console.log(dataHtml)
                 tableBody.innerHTML = dataHtml;  
