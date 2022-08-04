@@ -6,55 +6,182 @@
         <link rel ="stylesheet" type="text/css" href="/Tournament-Tracker/pages/styles.css"> 
     </head>
     <body>
-        <!-- order data list -->
-        <div  class = "recentOrders">
-            <div class="cardHeader">
-                <h2>Tournaments</h2>
-                <a href="#" class="btn">View All</a>
-            </div>
-            <table>
-                <thead>
+        <div style="display:none">
+            <div id="Orders_editForm1">
+                <table style="width: 100%">
                     <tr>
-                        <td>Tournament Name</td>
-                        <td>Prize</td>
-                        <td>Team 1</td>
-                        <td>Team 2</td>
-                        <td>Status</td>
+                        <td valign="top">
+                            <table>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Customer:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {CustomerID}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Employee:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {EmployeeID}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Order Date:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {OrderDate}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Required Date:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {RequiredDate}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Shipped Date:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {ShippedDate}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td valign="top">
+                            <table style="float: right" 
+                                class="RightAlignedInputs">
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Address:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {ShipAddress}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        City:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {ShipCity}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Region:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {ShipRegion}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Postal Code:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {ShipPostalCode}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Ship Country:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {ShipCountry}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
-                </thead>
-                <tbody id="tableData"></tbody>
-            </table>   
+                    <tr>
+                        <td colspan="2">
+                            {view2Extender}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="bottom">
+                            <table>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Ship Name:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {ShipName}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Ship Via:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly">
+                                            {ShipVia}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td align="right">
+                            <table style="margin-right: 4px;" 
+                                class="RightAlignedInputs">
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Subtotal:
+                                    </td>
+                                    <td align="right">
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {Subtotal}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Freight:
+                                    </td>
+                                    <td align="right">
+                                        <div class="FieldPlaceholder DataOnly " 
+                                            style="float: right">
+                                            {Freight}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="FieldLabel">
+                                        Total:
+                                    </td>
+                                    <td>
+                                        <div class="FieldPlaceholder DataOnly" 
+                                            style="float: right">
+                                            {Total}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-
-        <!-- Load Table Data --> 
-        <script type="text/template" id="tbl_content_tmpl">
-        <tr>
-            <td><%= tournamentName %></td>
-            <!-- TO DO <td><%= prize %></td> -->
-            <!-- TO DO <td><%= prize %></td> -->
-        </tr>
-        </script>
-
-        <script>
-            // Data from: /dataFiles/TournamentModels.csv           
-            getData();
-
-            async function getData() {              
-            const response = await fetch('/Tournament-Tracker/dataFiles/TournamentModels.csv');
-            const csvData = await response.text();
-
-            const tableBody = document.getElementById('tableData');
-            //let dataHtml = '';
-
-            for(let data of csvData) {
-                dataHtml += '<tr><td></td></tr>';
-
-            }
-
-            console.log(data);  
-            }
-        </script> 
-        <!-- Load Table Data -->
 
     </body>
 </html>
