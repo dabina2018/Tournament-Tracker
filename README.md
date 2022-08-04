@@ -16,7 +16,8 @@ User can:
 * Create Tournaments
 * Save data to either SQL database, csv or Text file
 
-[Check it out!](https://dabina2018.github.io/Tournament-Tracker/) 
+<p> I am currently working on a JS front end for a web version<p>
+[Check it out here!](https://dabina2018.github.io/Tournament-Tracker/) 
 ## ScreenShots
 
 ### Tournament Dashbard
