@@ -7,6 +7,62 @@
     </head>
   
     <body>
+         <!-- Navigation Container -->
+       <div class="container">
+        <div class="navigation">
+              <ul>
+                  <li>
+                      <a href="https://dabina2018.github.io/Tournament-Tracker/">
+                          <span class="icon"><link rel="icon" href="/Tournament-Tracker/images/podium_icon.ico" type=""></ion-icon></span>
+                          <span class="title">Tournament Dashboard</span>
+                      </a>                       
+                  </li>
+                  <li> 
+                      <a href="/Tournament-Tracker/pages/tournViewer.html">
+                          <span class="icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                          <span class="title">Tournament Viewer</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <span class="icon"><ion-icon name="create"></ion-icon></ion-icon></span>
+                          <span class="title">Create a Tournament</span>
+                      </a>
+                  </li>                        
+                 <li>
+                      <a href="/Tournament-Tracker/pages/createTeam.html">
+                          <span class="icon"><ion-icon name="people"></ion-icon></ion-icon></span>
+                          <span class="title">Create a Team</span>
+                      </a>                    
+                 </li>
+                 <li>
+                      <a href="/Tournament-Tracker/pages/createPrize.html">
+                          <span class="icon"><ion-icon name="trophy"></ion-icon></ion-icon></span>
+                          <span class="title">Create a Prize</span>
+                      </a>                    
+                 </li>
+                 <li>
+                      <a href="#">
+                          <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                          <span class="title">Settings</span>
+                      </a>                 
+                 </li>
+                 <li>
+                      <a href="#">
+                          <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                          <span class="title">Password</span>
+                      </a>                   
+                 </li>
+                 <li>
+                      <a href="https://dabina2018.github.io/Tournament-Tracker/#">
+                          <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                          <span class="title">Signout</span>
+                      </a>
+                 </li>                   
+              </ul>
+          </div>
+     </div>
+     <!-- End Navigation Container -->
         <div class="details">
             <!-- order data list -->
             <div  class = "tournaments">
@@ -49,6 +105,30 @@
 
 
         </script>
+         </script> 
+         <!-- Load Table Data -->
+         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+         <script>
+             //MenuToggle
+             let toggle = document.querySelector('.toggle');
+             let navigation = document.querySelector('.navigation');
+             let main = document.querySelector('.main');
+ 
+             toggle.onclick = function(){
+                 navigation.classList.toggle('active');
+                 main.classList.toggle('active');
+             }
+             //add hovered class in selected list item
+             let list = document.querySelectorAll('.navigation li');
+             function activeLink(){
+                 list.forEach((item) => 
+                 item.classList.remove('hovered'));
+                 this.classList.add('hovered');
+             }
+             list.forEach((item) =>
+             item.addEventListener('mouseover', activeLink))
+         </script>
        
 
     </body>
