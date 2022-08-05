@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tournament Tracker | High King Meena</title>
+        <link rel ="stylesheet" type="text/css" href="/Tournament-Tracker/pages/styles.css"> 
+    </head>
     <style>
         table {
             border-collapse: collapse;
@@ -14,129 +19,135 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Convert CSV to JSON </title> 
     </head>
-    <body>  
-         <!-- Navigation Container -->
-       <div class="container">
-        <div class="navigation">
-              <ul>
-                  <li>
-                      <a href="https://dabina2018.github.io/Tournament-Tracker/">
-                          <span class="icon"><link rel="icon" href="/Tournament-Tracker/images/podium_icon.ico" type=""></ion-icon></span>
-                          <span class="title">Tournament Dashboard</span>
-                      </a>                       
-                  </li>
-                  <li> 
-                      <a href="/Tournament-Tracker/pages/tournViewer.html">
-                          <span class="icon"><ion-icon name="game-controller-outline"></ion-icon></span>
-                          <span class="title">Tournament Viewer</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span class="icon"><ion-icon name="create"></ion-icon></ion-icon></span>
-                          <span class="title">Create a Tournament</span>
-                      </a>
-                  </li>                        
-                 <li>
-                      <a href="/Tournament-Tracker/pages/createTeam.html">
-                          <span class="icon"><ion-icon name="people"></ion-icon></ion-icon></span>
-                          <span class="title">Create a Team</span>
-                      </a>                    
-                 </li>
-                 <li>
-                      <a href="/Tournament-Tracker/pages/createPrize.html">
-                          <span class="icon"><ion-icon name="trophy"></ion-icon></ion-icon></span>
-                          <span class="title">Create a Prize</span>
-                      </a>                    
-                 </li>
-                 <li>
-                      <a href="#">
-                          <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                          <span class="title">Settings</span>
-                      </a>                 
-                 </li>
-                 <li>
-                      <a href="#">
-                          <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                          <span class="title">Password</span>
-                      </a>                   
-                 </li>
-                 <li>
-                      <a href="https://dabina2018.github.io/Tournament-Tracker/#">
-                          <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                          <span class="title">Signout</span>
-                      </a>
-                 </li>                   
-              </ul>
-          </div>
-     </div>
-     <!-- End Navigation Container -->
-     <!-- main -->
-     <div class="main">
-        <!-- topbar -->
-        <div class="topbar">
-            <div class="toggle"><ion-icon name="menu-outline"></ion-icon>
-            </div>
-            <!-- Search -->
-            <div class="search">
-                <label>
-                    <input type="text" placeholder="Search here">
-                    <ion-icon name="search-outline"></ion-icon>
-                </label>
-            </div>
-            <!-- userImg -->
-            <div class ="user">
-                <img src="/Tournament-Tracker/images/user.jpg">
-            </div>
-        </div>   
-        <!-- End topbar -->
-        <!-- Cards-->
-        <div class="cardBox">
-            <div class="card">
-                <div>
-                    <div class="numbers">1,506</div>
-                    <div class="cardName">Daily Views</div>
-                </div>
-                <div class="iconBx"><ion-icon name="eye-outline"></ion-icon>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">80</div>
-                    <div class="cardName">Games</div>
-                </div>
-                <div class="iconBx"><ion-icon name="game-controller-outline"></ion-icon></ion-icon>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">284</div>
-                    <div class="cardName">Players</div>
-                </div>
-                <div class="iconBx"><ion-icon name="people"></ion-icon></ion-icon>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">$7,842</div>
-                    <div class="cardName">Prizes</div>
-                </div>
-                <div class="iconBx"><ion-icon name="cash-outline"></ion-icon></ion-icon>
-                </div>
+    <body>
+        <!-- Navigation Container -->
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="https://dabina2018.github.io/Tournament-Tracker/">
+                            <span class="icon"><link rel="icon" href="/Tournament-Tracker/images/podium_icon.ico" type=""></ion-icon></span>
+                            <span class="title">Tournament Dashboard</span>
+                        </a>                       
+                    </li>
+                    <li> 
+                        <a href="/Tournament-Tracker/pages/tournViewer.html">
+                            <span class="icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                            <span class="title">Tournament Viewer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="create"></ion-icon></ion-icon></span>
+                            <span class="title">Create a Tournament</span>
+                        </a>
+                    </li>                        
+                    <li>
+                        <a href="/Tournament-Tracker/pages/createTeam.html">
+                            <span class="icon"><ion-icon name="people"></ion-icon></ion-icon></span>
+                            <span class="title">Create a Team</span>
+                        </a>                    
+                    </li>
+                    <li>
+                        <a href="/Tournament-Tracker/pages/createPrize.html">
+                            <span class="icon"><ion-icon name="trophy"></ion-icon></ion-icon></span>
+                            <span class="title">Create a Prize</span>
+                        </a>                    
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="title">Settings</span>
+                        </a>                 
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                            <span class="title">Password</span>
+                        </a>                   
+                    </li>
+                    <li>
+                        <a href="https://dabina2018.github.io/Tournament-Tracker/#">
+                            <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                            <span class="title">Signout</span>
+                        </a>
+                    </li>                   
+                </ul>
             </div>
         </div>
-        <!-- End Cards -->
-        <table>
-            <thead>
-                <tr>
-                    <td>zero</td>
-                    <td>one</td>
-                    <td>two</td>
-                    <td>three</td>
-                </tr>
-            </thead>
-                <tbody id="tableBody"></tbody>
-        </table>
+        <!-- End Navigation Container -->
+
+        <!-- main -->
+        <div class="main">
+            <!-- topbar -->
+            <div class="topbar">
+                <div class="toggle"><ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- Search -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- userImg -->
+                <div class ="user">
+                    <img src="/Tournament-Tracker/images/user.jpg">
+                </div>
+            </div>   
+            <!-- End topbar -->
+            <!-- Cards-->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,506</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Games</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="game-controller-outline"></ion-icon></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Players</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="people"></ion-icon></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Prizes</div>
+                    </div>
+                    <div class="iconBx"><ion-icon name="cash-outline"></ion-icon></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- End Cards -->
+            <table>
+                <thead>
+                    <tr>
+                        <td>zero</td>
+                        <td>one</td>
+                        <td>two</td>
+                        <td>three</td>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+        <!-- End Main -->
+    </main>
 
     </script> 
     <!-- Load Table Data -->
