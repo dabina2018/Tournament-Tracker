@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "csv": "^6.2.0",
+    "sqlite3": "^5.0.11"
+  },
+  "name": "tournament-tracker",
+  "description": "<H2> TournamentTracker</H2> <H4> Tournament Tracking Application </H4> <p> I used a YouTube Tutorial at https://www.youtube.com/watch?v=wfWxdh-_k_4 as a template for this application.</p> <p> Significant changes from tutorial: </p> <ul>   <li>I used Azure SQL server instead of a local databse</li>   <li>I used HTML5 instead of WinForms</li>   <li>I enabled Azure AD Integrated Authentication</li>    <li>The SQL connection  only has permissons  to run stored procedures</li>   </ul>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dabina2018/Tournament-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dabina2018/Tournament-Tracker/issues"
+  },
+  "homepage": "https://github.com/dabina2018/Tournament-Tracker#readme"
+}

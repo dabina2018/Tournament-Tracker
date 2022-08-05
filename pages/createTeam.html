@@ -6,195 +6,49 @@
         <link rel ="stylesheet" type="text/css" href="/Tournament-Tracker/pages/styles.css"> 
     </head>
   
-    <style type="text/css">
-        .FieldLabel
-        {
-            font-weight: bold;
-            padding: 4px;
-            width: 90px;
-            font-family: 'Ubuntu', sans-serif;
-        }
-        .RightAlignedInputs input
-        {
-            text-align: right;
-        }
-    </style>
     <body>
-        
-            <div id="Orders_editForm1">
-                <table style="width: 100%">
-                    <tr>
-                        <td valign="top">
-                            <table>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Customer:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {CustomerID}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Employee:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {EmployeeID}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Order Date:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {OrderDate}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Required Date:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {RequiredDate}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Shipped Date:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {ShippedDate}</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td valign="top">
-                            <table style="float: right" 
-                                class="RightAlignedInputs">
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Address:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {ShipAddress}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        City:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {ShipCity}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Region:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {ShipRegion}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Postal Code:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {ShipPostalCode}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Ship Country:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {ShipCountry}</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            {view2Extender}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="bottom">
-                            <table>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Ship Name:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {ShipName}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Ship Via:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly">
-                                            {ShipVia}</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td align="right">
-                            <table style="margin-right: 4px;" 
-                                class="RightAlignedInputs">
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Subtotal:
-                                    </td>
-                                    <td align="right">
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {Subtotal}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Freight:
-                                    </td>
-                                    <td align="right">
-                                        <div class="FieldPlaceholder DataOnly " 
-                                            style="float: right">
-                                            {Freight}</div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="FieldLabel">
-                                        Total:
-                                    </td>
-                                    <td>
-                                        <div class="FieldPlaceholder DataOnly" 
-                                            style="float: right">
-                                            {Total}</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+        <div class="details">
+            <!-- order data list -->
+            <div  class = "tournaments">
+                <div class="cardHeader">
+                    <h2>Tournaments</h2>
+                    <a href="#" class="btn">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Tournament Name</td>
+                            <td>Prize</td>
+                            <td>Round 1</td>
+                            <td>Round 2</td>
+                            <td>Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Childs Play</td>
+                            <td>$1200</td>
+                            <td>Chuckies</td>
+                            <td>Victorias</td>
+                            <td><span class="status complete">Complete</span></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>   
             </div>
+        </div>
+        <script>
+            const tournaments = []
+            var fs = require('fs');
+            var parse = require('csv-parse');
+            var parser = parse({columns: true}, function (err, records) {
+                console.log(records);
+            });
+
+            fs.createReadStream(_dirname+'/TournamentModels.csv').pipe(parser);
+
+
+        </script>
        
 
     </body>

@@ -1,4 +1,5 @@
 //https://www.digitalocean.com/community/tutorials/how-to-read-and-write-csv-files-in-node-js-using-node-csv
+//https://www.youtube.com/watch?v=1wXYg8Eslnc
 
 const express = require('express');
 const fs = require('fs');
@@ -8,9 +9,8 @@ const app = express()
 
 //app.METHOD(PATH, HANDLER)
 app.use(express.json());
-app.get('/', function (req :Request<P, ResBody, ReqBody, ReqQuery, Locals>, res: Response<ResBody,Locals> ) {
-    res.json('This is a test')
-})
+app.get('/', 
+)
 
 var parser = parse({columns: true}, function (err, records) {
     console.log(records);
