@@ -15,10 +15,6 @@
             padding: 10px;
         }
     </style>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Convert CSV to JSON </title> 
-    </head>
     <body>
         <!-- Navigation Container -->
         <div class="container">
@@ -132,18 +128,8 @@
                 </div>
             </div>
             <!-- End Cards -->
-            <table>
-                <thead>
-                    <tr>
-                        <td>zero</td>
-                        <td>one</td>
-                        <td>two</td>
-                        <td>three</td>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-
-                </tbody>
+            <table id="csvRoot">
+                
             </table>
         </div>
         <!-- End Main -->
@@ -153,6 +139,8 @@
     <!-- Load Table Data -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./lib/papaparse.min.js"></script>
+    <script type = "module" src="main.js"></script>
     <script>
         //MenuToggle
         let toggle = document.querySelector('.toggle');
