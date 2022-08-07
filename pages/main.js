@@ -12,10 +12,9 @@ csvFileInput.addEventListener("change", e => {
         delimiter: ",",
         skipEmptyLines: true,
         complete: results =>{
-            console.log(results);
+            createPrize.update(results.data.slice(1), results.data[0]);
         }
     })
-
 });
 
 /*
