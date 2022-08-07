@@ -177,65 +177,21 @@
 
         <script>
         // Data from: /dataFiles/TournamentModels.csv           
-            getData();
-
-            //loadTableData(data);
-            async function getData() {              
-            const response = await fetch('/Tournament-Tracker/dataFiles/js_csv_practice.csv');
-            const data = await response.text();
-            const tableBody = document.getElementById('tableBody');
-            let dataHtml = '';
-            /*
-            for(let entry of data) {
-                dataHtml += '<tr><td></td></tr>';
-            }
-            */
-            for(let entry of data) {
-                    dataHtml += `<tr><td>${entry.one}</td><td>${entry.two}</td>
-                        <td>${entry.three}</td><td>${entry.four}</td></tr>`;
-                }
-                console.log(dataHtml)
-                tableBody.innerHTML = dataHtml;  
-            }
-            function loadTableData(dataHtml) {
-                
-            }
-            /*
-            const uploadBtn = document.getElementById('uploadBtn').addEventListener('click', () => {
-                Papa.parse(document.getElementById('uploadfile').files[0], {
-                     download: true,
-                     header: true, 
-                     skipEmptyLines: true,
-                     complete: function(results){
-                        console.log(results);
-                        console.log(results.data[0].revenue);
-                        
-                        for (i = 0; i < results.data.length; i++) {
-                            revenueData.push(results.data[i].revenue);
-                            costData.push(results.data[i].cost);
-                            profitData.push(results.data[i].profit);
-                        }                        
-                        console.log(revenueData);
-                        console.log(costData);
-                        console.log(profitData);                        
-                    }
-                });
-            })
-            */
-            
-            /*
-            function loadTableData(data) {
-                const tableBody = document.getElementById('tableBody');
-                let dataHtml = '';
-
-                for(let data of results) {
-                    dataHtml += `<tr><td>${data.id}</td><td>${data.revenue}</td>
-                        <td>${data.profit}</td><td>${data.cost}</td></tr>`;
-                }
-                console.log(dataHtml)
-                tableBody.innerHTML = dataHtml;
-            }
-            */
+            CsvToHtmlTable.init({
+                csv_path:"Tournament-Tracker/dataFiles/js_csv_practice.csv",
+                element:"table-container",
+                allow_download: true,
+                csv_options: {
+                    seperator:",",
+                    delimiter:'"'
+                },
+                datatables_options:{
+                    paging: false
+                },
+                custom_formatting:[
+                    [4, format_link]
+                ]
+            });
         </script>     
 
     </body>
