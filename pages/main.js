@@ -2,8 +2,8 @@
 import CreatePrize from "./CreatePrize.js";
 
 const tableRoot = document.querySelector("#csvRoot");  //table Id from index file
-const csvFileInput = document.querySelector("#csvFileInput");
-//const csvFileInput = document(/Tournament-Tracker/dataFiles/TournamentModels.csv)
+//const csvFileInput = document.querySelector("#csvFileInput");
+const csvFileInput = document(/Tournament-Tracker/dataFiles/TournamentModels.csv)
 const createPrize = new CreatePrize(tableRoot);
 
 
