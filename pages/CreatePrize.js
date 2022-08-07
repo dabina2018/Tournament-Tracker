@@ -32,12 +32,7 @@ export default class{
         this.root.insertAdjacentHTML("afterbegin",`
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Tournament Name</td>
-                    <td>Prize</td>
-                    <td>Teams</td>
-                    <td>??</td>
-                    <td>Rounds</td>
+                    ${ headerColumns.map(text => `<th>${text}</th>`).join("") }
                 </tr>
             </thead>
         `);
