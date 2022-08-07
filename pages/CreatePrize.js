@@ -32,11 +32,12 @@ export default class{
         this.root.insertAdjacentHTML("afterbegin",`
             <thead>
                 <tr>
+                    <td>ID</td>
                     <td>Tournament Name</td>
                     <td>Prize</td>
-                    <td>Team 1</td>
-                    <td>Team 2</td>
-                    <td>Status</td>
+                    <td>Teams</td>
+                    <td>Score</td>
+                    <td>Players</td>
                 </tr>
             </thead>
         `);
