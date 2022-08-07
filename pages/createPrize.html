@@ -161,26 +161,6 @@
         list.forEach((item) =>
         item.addEventListener('mouseover', activeLink))
     </script>
-        
-
-        <script>
-        // Data from: /dataFiles/TournamentModels.csv           
-            CsvToHtmlTable.init({
-                csv_path:"Tournament-Tracker/dataFiles/js_csv_practice.csv",
-                element:"table-container",
-                allow_download: true,
-                csv_options: {
-                    seperator:",",
-                    delimiter:'"'
-                },
-                datatables_options:{
-                    paging: false
-                },
-                custom_formatting:[
-                    [4, format_link]
-                ]
-            });
-        </script>     
 
     </body>
 </html>
