@@ -13,10 +13,24 @@ export default class{
     setHeader(headerColumns){
         this.root.insertAdjacentHTML("afterbegin",`
             <thead>
-                ${headerColumns.map(text => `<th>${text}</th>`).join("") }
-
+                <tr>
+                    ${headerColumns.map(text => `<th>${text}</th>`).join("") }
+                </tr>
             </thead>
-
         `);
     }
+     /**
+     * 
+     * @param {string[][]} data A 2D array of data to be used as the table body.
+     */
+    setBody(data) {
+        const rowsHtml = data.map(row => {
+            return`
+                <tr>
+                    ${ row.map(text => `<td>${ text }</td>`).join("") }
+                </tr>`;
+        });
+        console.log(rowsHtml);
+    }
+    
 }

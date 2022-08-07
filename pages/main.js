@@ -4,3 +4,8 @@ const tableRoot = document.querySelector("#csvRoot");  //table Id from index fil
 const createPrize = new CreatePrize(tableRoot);
 
 createPrize.setHeader(["ID", "Name", "Age"]);
+createPrize.setBody([
+    [4500, "daily", 99],
+    [4500, "daily", 99],
+    [4500, "daily", 99]
+]);
