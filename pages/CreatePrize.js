@@ -1,10 +1,25 @@
 export default class{
-    /**
-     * 
+    /** 
      * @param {HTMLTableElement} root The table element which will display CSV data.
      */
     constructor(root){
         this.root = root;
+    }
+
+    /** 
+     * @param {string[][]} data The table element which will display CSV data.
+     * @param {string[]} headerColumns List of headings to be used.
+     */
+    update(data, headerColumns = []){
+        this.clear();
+        this.setHeader(headerColumns);
+        this.setBody(data);
+    }
+    /**
+     * Clears all contents of the table (incl. the header)
+     */
+    clear() {
+        this.root.innerHTML = "";
     }
     /**
      * 
@@ -20,7 +35,7 @@ export default class{
         `);
     }
      /**
-     * 
+     * Sets the table body
      * @param {string[][]} data A 2D array of data to be used as the table body.
      */
     setBody(data) {
@@ -28,9 +43,14 @@ export default class{
             return`
                 <tr>
                     ${ row.map(text => `<td>${ text }</td>`).join("") }
-                </tr>`;
+                </tr>
+            `;
         });
-        console.log(rowsHtml);
-    }
-    
+
+        this.root.insertAdjacentHTML("beforeend", `
+            <tbody>
+                ${ rowsHtml.join("")}
+            </tbody>                
+        `);
+    }    
 }
