@@ -32,10 +32,15 @@ export default class{
         this.root.insertAdjacentHTML("afterbegin",`
             <thead>
                 <tr>
-                    ${ headerColumns.map(text => `<th>${text}</th>`).join("") }
+                    <td>Tournament Name</td>
+                    <td>Prize</td>
+                    <td>Team 1</td>
+                    <td>Team 2</td>
+                    <td>Status</td>
                 </tr>
             </thead>
         `);
+        /*${ headerColumns.map(text => `<th>${text}</th>`).join("") } */
     }
      /**
      * Sets the table body
