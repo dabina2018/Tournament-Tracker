@@ -1,4 +1,4 @@
-import Papa from 'papaparse';
+//import Papa from 'papaparse';
 import CreatePrize from "./CreatePrize.js";
 
 const tableRoot = document.querySelector("#csvRoot");  //table Id from index file
