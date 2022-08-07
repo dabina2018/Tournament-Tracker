@@ -5,7 +5,18 @@ export default class{
      */
     constructor(root){
         this.root = root;
-        console.log("I am constructed!")
+    }
+    /**
+     * 
+     * @param {string[]} headerColumns List of headings to be used.
+     */
+    setHeader(headerColumns){
+        this.root.insertAdjacentHTML("afterbegin",`
+            <thead>
+                ${headerColumns.map(text => `<th>${text}</th>`).join("") }
 
+            </thead>
+
+        `);
     }
 }
