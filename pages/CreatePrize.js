@@ -16,6 +16,8 @@ export default class{
         this.setHeader(headerColumns);
         this.setBody(data);
     }
+
+
     /**
      * Clears all contents of the table (incl. the header)
      */
@@ -30,7 +32,12 @@ export default class{
         this.root.insertAdjacentHTML("afterbegin",`
             <thead>
                 <tr>
-                    ${headerColumns.map(text => `<th>${text}</th>`).join("") }
+                    <td>ID</td>
+                    <td>Tournament Name</td>
+                    <td>Prize</td>
+                    <td>Teams</td>
+                    <td>??</td>
+                    <td>Rounds</td>
                 </tr>
             </thead>
         `);
