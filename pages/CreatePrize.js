@@ -13,7 +13,7 @@ export default class{
      */
     update(data, headerColumns = []){
         this.clear();
-        //this.setHeader(headerColumns);
+        this.setHeader(headerColumns);
         this.setBody(data);
     }
     /**
