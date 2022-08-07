@@ -7,6 +7,7 @@ export default class{
     }
 
     /** 
+     * Clears existing table data and replaces with new data
      * @param {string[][]} data The table element which will display CSV data.
      * @param {string[]} headerColumns List of headings to be used.
      */
@@ -22,7 +23,7 @@ export default class{
         this.root.innerHTML = "";
     }
     /**
-     * 
+     * Sets the table Header
      * @param {string[]} headerColumns List of headings to be used.
      */
     setHeader(headerColumns){
