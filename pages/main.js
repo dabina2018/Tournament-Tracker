@@ -5,6 +5,8 @@ const tableRoot = document.querySelector("#csvRoot");  //table Id from index fil
 const csvFileInput = document.querySelector("#csvFileInput");
 const createPrize = new CreatePrize(tableRoot);
 
+createPrize.setHeader(["ID", "Tournament Name", "Prize", "Teams", "??", "rounds"])
+
 csvFileInput.addEventListener("change", e => {
     console.log(csvFileInput.files[0]);
 
@@ -12,9 +14,10 @@ csvFileInput.addEventListener("change", e => {
         delimiter: ",",
         skipEmptyLines: true,
         complete: results =>{
-            createPrize.update(results.data.slice(1), results.data[0]);
+            createPrize.update(results.data.slice(0), results.data[0]);
         }
     })
 });
+
 
 
