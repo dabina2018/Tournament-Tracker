@@ -17,8 +17,8 @@ const data = {
 };
 
 app.get("/data", (req, res) => {
-    res.send("hey beena");
+    res.json(data);
 });
 
-//app.listen(3001, () => console.log("app is running"));
+app.listen(3001, () => console.log("app is running"));
 
