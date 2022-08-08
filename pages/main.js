@@ -7,7 +7,7 @@ const csvFileInput = '/Tournament-Tracker/dataFiles/TournamentModels.csv'
 const createPrize = new CreatePrize(tableRoot);
 
 
-csvFileInput.addEventListener("change", e => {
+//csvFileInput.addEventListener("change", e => {
     console.log(csvFileInput.files[0]);
 
     Papa.parse(csvFileInput.files[0], {
@@ -17,7 +17,7 @@ csvFileInput.addEventListener("change", e => {
             createPrize.update(results.data.slice(0), results.data[0]);
         }
     })
-});
+//});
 
 
 
