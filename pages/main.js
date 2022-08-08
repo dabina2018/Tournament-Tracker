@@ -18,20 +18,6 @@ csvFileInput.addEventListener("change", e => {
     })
 });
 
-//Open csv file
-//$file =fgetcsv('/Tournament-Tracker/dataFiles/TournamentModels.csv', "r")
-var csvContent = '/Tournament-Tracker/dataFiles/TournamentModels.csv';
-$("#viewAll").click(function() {
-    console.log(csvContent[0]);
 
-    Papa.parse(csvContent[0], {
-        delimiter: ",",
-        skipEmptyLines: true,
-        complete: results =>{
-            createPrize.update(results.data.slice(0), results.data[0]);
-        }
-    })
-
-});
 
 
