@@ -21,10 +21,10 @@ csvFileInput.addEventListener("change", e => {
 //Open csv file
 //$file =fgetcsv('/Tournament-Tracker/dataFiles/TournamentModels.csv', "r")
 var csvContent = '/Tournament-Tracker/dataFiles/TournamentModels.csv';
-$("viewAll").click(function() {
-    console.log(csvFileInput.files[0]);
+$("#viewAll").click(function() {
+    console.log(csvContent[0]);
 
-    Papa.parse(csvFileInput.files[0], {
+    Papa.parse(csvContent[0], {
         delimiter: ",",
         skipEmptyLines: true,
         complete: results =>{
