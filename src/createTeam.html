@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tournament Tracker | High King Meena</title>
-        <link rel ="stylesheet" type="text/css" href="/Tournament-Tracker/pages/styles.css"> 
+        <link rel ="stylesheet" type="text/css" href="/Tournament-Tracker/src/styles.css"> 
     </head>
   
     <body>
@@ -120,36 +120,25 @@
             <!-- End Cards -->
             <div class="details">
                 <!-- order data list -->
-                <div  class = "tournaments">
+                <div  class = "recentOrders">
                     <div class="cardHeader">
                         <h2>Tournaments</h2>
                         <a href="#" class="btn">View All</a>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Tournament Name</td>
-                                <td>Prize</td>
-                                <td>Round 1</td>
-                                <td>Round 2</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Childs Play</td>
-                                <td>$1200</td>
-                                <td>Chuckies</td>
-                                <td>Victorias</td>
-                                <td><span class="status complete">Complete</span></td>
-                            </tr>
-                            
-                        </tbody>
+                    <div class="table-refresh" data-data-url="/data"></div>
+                        <table class="table-refresh__table">
+                            <span class="table-refresh__label">Last UPdate: never</span>
+                            <button type="button" class="table-refresh__button">
+                                <ion-icon name="refresh-circle"></ion-icon>
+                            </button>
+                            </tbody>
+                        </table>          
                     </table>   
                 </div>
             </div>
         </div>
         <!-- End Main -->   
+        <script src="./src/CreateTeam.js"></script>
         <script>
             const tournaments = []
             var fs = require('fs');
@@ -157,10 +146,7 @@
             var parser = parse({columns: true}, function (err, records) {
                 console.log(records);
             });
-
             fs.createReadStream(_dirname+'/TournamentModels.csv').pipe(parser);
-
-
         </script>
          </script> 
          <!-- Load Table Data -->

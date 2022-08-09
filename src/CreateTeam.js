@@ -4,6 +4,8 @@ const shuffleArray = require("shuffle-array");
 
 const app = express();
 
+app.use(express.static("public"));
+
 const data = {
     headers: ["Name", "Age", "Professon", "Country"],
     rows: new Array(10).fill(undefined).map(() => {
