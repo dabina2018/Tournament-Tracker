@@ -449,3 +449,17 @@ body{
     padding: 9px 18px;
     font-weight: normal;
 }
+.table-refresh__table tbody tr:nth-last-of-type(even) {
+    background: #eeeeee;    
+
+}
+.table-refresh__options {
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+.table-refresh__options > *:not(:last-child) {
+    margin-right: 12px;
+
+}
