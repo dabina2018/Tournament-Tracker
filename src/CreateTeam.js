@@ -36,10 +36,12 @@
             `;
 
         root.append(table, options);
+        /*
         options.querySelector(".table-refresh__button").addEventListener("click", () => {
             updateTable(root);
         })
 
         updateTable(root);
+        */
     }
 }
