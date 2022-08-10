@@ -437,10 +437,10 @@ body{
     border-collapse: collapse;
     width: 100%;
     box-shadow: 0 0 5px; rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #009578;
+    border-bottom: 2px solid #1795ce;
 }
 .table-refresh__table thead tr {
-    background: #009578;
+    background: #1795ce;
     color: #ffffff;
 }
 .table-refresh__table th,
@@ -476,5 +476,5 @@ body{
 }
 .table-refresh__button > i {
     font-size: 1.2em;
-    
+
 }
