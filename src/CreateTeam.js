@@ -1,8 +1,12 @@
-{   
-    /**
-    * Populates data table
-    * @param {HTMLDivElement} root 
-    */
+export default class {   
+    /** 
+      * Populates data table
+     * @param {HTMLDivElement} root 
+     */
+      constructor(root){
+        this.root = root;
+    }   
+
     async function updateTable(root){
         root.querySelector(".table-refresh__button").classList.add("table-refresh__button--refreshing");
 
