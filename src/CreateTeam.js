@@ -4,8 +4,13 @@
     * @param {HTMLDivElement} root 
     */
     async function updateTable(root){
-        root.querySelector(".table-refresh__button").classList.add("table-refresh__button--refreshing")
-        console.log("hit girl");
+        root.querySelector(".table-refresh__button").classList.add("table-refresh__button--refreshing");
+
+        const table = root.querySelector(".table-refresh__table");
+        const response = await fetch(root.dataset.url);
+        const data = await response.json();
+
+        console.log(data);
     }
 
     for (const root of document.querySelectorAll(".table-refresh[data-url]")) {
@@ -31,9 +36,8 @@
             <span class="table-fresh__label">Last Update: never</span>
             <button type="button" class="table-refresh__button">
                 <i class="ion-icon">refresh</i>
-            </button>
-            
-            `;
+            </button>            
+        `;
 
         root.append(table, options);
         
