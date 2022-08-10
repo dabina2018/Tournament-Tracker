@@ -160,7 +160,7 @@
         </div>
         <!-- End Main -->   
         <script src="CreateTeam.js"></script>
-       >
+
         
          
          <!-- Load Table Data -->
@@ -192,3 +192,15 @@
 </html>
 
 <!-- note: https://www.youtube.com/watch?v=Qo-iQNXDf1c -->
+
+<!--
+    <script>
+        const tournaments = []
+        var fs = import('./fs');
+        var parse = require('csv-parse');
+        var parser = parse({columns: true}, function (err, records) {
+            console.log(records);
+        });
+        fs.createReadStream(_dirname+'/TournamentModels.csv').pipe(parser);
+    </script>
+-->
