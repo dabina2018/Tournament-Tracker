@@ -5,7 +5,7 @@
     */
     async function updateTable(root){
         root.querySelector(".table-refresh__button").classList.add("table-refresh__button--refreshing")
-        //console.log("hit girl");
+        console.log("hit girl");
     }
 
     for (const root of document.querySelectorAll(".table-refresh[data-url]")) {
