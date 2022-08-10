@@ -430,6 +430,7 @@ body{
     }
 }
 /* css for table refresh on Create Team page*/
+/*
 .table-refresh {
     font-size: 14px;
 }
@@ -459,6 +460,7 @@ body{
     justify-content: flex-end;
     padding: 10px 0;
 }
+*/
 .table-refresh__options > *:not(:last-child) {
     margin-right: 12px;
 }
