@@ -1,6 +1,6 @@
 //import Papa from 'papaparse';
 import CreatePrize from "./CreatePrize.js";
-//import CreateTeam from "./CreateTeam.js";
+import CreateTeam from "./CreateTeam.js";
 
 const tableRoot = document.querySelector("#csvRoot");  //table Id from html file
 const csvFileInput = document.querySelector("#csvFileInput");
