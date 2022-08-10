@@ -470,5 +470,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.table-refresh__button > i {
+    font-size: 1.2em;
+    
 }
