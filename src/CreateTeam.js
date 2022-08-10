@@ -1,5 +1,4 @@
-{
-    function updateTable(){
+{   function updateTable(){
         console.log("hit girl");
     }
 
