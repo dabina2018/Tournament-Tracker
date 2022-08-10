@@ -164,7 +164,7 @@
         <script>
             const tournaments = []
             var fs = import('./fs');
-            var parse = import('csv-parse');
+            var parse = require('csv-parse');
             var parser = parse({columns: true}, function (err, records) {
                 console.log(records);
             });
