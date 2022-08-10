@@ -3,7 +3,7 @@
     }
 
     for (const root of document.querySelectorAll(".table-refresh[data-url]")) {
-        const table = docuemnt.createElement("table");
+        const table = document.createElement("table");
         const options = document.createElement("div");
 
         table.classList.add("table-refresh__table");
