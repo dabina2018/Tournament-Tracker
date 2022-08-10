@@ -454,15 +454,15 @@ body{
     background: #eeeeee;    
 
 }
+*/
 .table-refresh__options {
     display: flex;
     align-items:center;
     justify-content: flex-end;
     padding: 10px 0;
 }
-*/
 .table-refresh__options > *:not(:last-child) {
-    margin-right: 12px;
+    margin-left: 12px;
 }
 .table-refresh__button{
     background: #eeeeee;
@@ -470,8 +470,8 @@ body{
     border: none;
     outline: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
     padding: 5px;
     border-radius: 50%;
     cursor: pointer;
