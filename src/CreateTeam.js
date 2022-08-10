@@ -4,7 +4,7 @@
     * @param {HTMLDivElement} root 
     */
     async function updateTable(root){
-        root.querySelector(".table-refresh__button").classList.add("table-refresh__button--refreshing")
+        //root.querySelector(".table-refresh__button").classList.add("table-refresh__button--refreshing")
         console.log("hit girl");
     }
 
