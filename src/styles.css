@@ -466,7 +466,7 @@ body{
 }
 .table-refresh__button{
     background: #eeeeee;
-    color: #333333;
+    color: #050505;
     border: none;
     outline: none;
     display: flex;
@@ -486,4 +486,8 @@ body{
     to {
         transform: rotate(1turn);
     }    
+}
+.table-refresh__label {
+    font-size: 0.8em;
+    color: #999999;
 }
