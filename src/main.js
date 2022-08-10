@@ -21,9 +21,9 @@ csvFileInput.addEventListener("change", e => {
 
 
 //// who knows???
-const express =  require("express");
-const chance = require("chance").Chance();
-const shuffleArray = require("shuffle-array");
+const express =  import("express");
+const chance = import("chance").Chance();
+const shuffleArray = import("shuffle-array");
 
 const app = express();
 app.use(express.static("public"));
